@@ -1,0 +1,12 @@
+/* legal pages: table of contents beside the text (not sticky) */
+.legal-wrap { padding-block: var(--section-y); }
+.legal-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s6); max-width: calc(1080px + 2 * var(--gutter)); }
+@media (min-width: 1024px) { .legal-layout { grid-template-columns: 260px minmax(0, 1fr); align-items: start; } }
+.legal-layout .legal-body { margin-inline: 0; max-width: 72ch; }
+.legal-toc-title { font-size: 1.125rem; margin-bottom: var(--s3); }
+.legal-toc ol { display: grid; gap: 8px; padding-inline-start: 1.2em; }
+.legal-toc li { list-style: decimal; color: var(--muted); font-size: var(--fs-small); }
+.legal-toc a { color: var(--primary-ink); font-weight: 600; text-decoration: none; }
+.legal-toc a:hover { text-decoration: underline; }
+.legal-body a { font-weight: 600; }
+.legal-body h2 { scroll-margin-top: calc(var(--header-h) + 16px); }

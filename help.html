@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help centre and FAQ | Northcrest Multispeciality Hospital</title>
+  <meta name="description" content="Answers about appointments, medical reports, billing and insurance, and visiting hours at Northcrest.">
+  <meta name="theme-color" content="#1E2A78">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('northcrest-theme');
+        var d = localStorage.getItem('northcrest-dir');
+        if (t !== 'dark' && t !== 'light') t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        document.documentElement.setAttribute('dir', d === 'rtl' ? 'rtl' : 'ltr');
+      } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500;600;700;800&amp;family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/pages/help.css">
+  <script defer src="data/site-data.js"></script>
+  <script defer src="js/validation.js"></script>
+  <script defer src="js/site.js"></script>
+  <script defer src="js/pages/help.js"></script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="utility-strip">
+    <div class="container utility-inner">
+      <ul class="utility-list" aria-label="Emergency and helpline numbers">
+        <li class="utility-emergency"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 3 8.3 7 10 4-1.7 7-5.5 7-10V6z"/><path d="M12 8.5v6M9 11.5h6"/></svg><span>Emergency 24/7:</span> <a href="tel:+918047181000"><span class="ltr-num">+91 80 4718 1000</span></a></li>
+        <li class="utility-hide-sm"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M3 16V8a1 1 0 0 1 1-1h10v9M14 10h4l3 3.5V16h-7"/><circle cx="7.5" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg><span>Ambulance:</span> <a href="tel:108"><span class="ltr-num">108</span></a></li>
+        <li class="utility-hide-md"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>Health helpline:</span> <a href="tel:+918047182200"><span class="ltr-num">+91 80 4718 2200</span></a></li>
+      </ul>
+      <ul class="utility-list utility-end">
+        <li class="utility-hide-md"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span>OPD Mon to Sat, 8:00 to 20:00</span></li>
+        <li class="utility-hide-sm"><svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span>English · ಕನ್ನಡ · हिन्दी</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Northcrest Multispeciality Hospital, home">
+          <svg class="brand-mark" viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" focusable="false">
+            <path class="mark-shield" d="M24 3 6 9.5v12.2C6 33.4 13.7 41.9 24 45c10.3-3.1 18-11.6 18-23.3V9.5z"/>
+            <path class="mark-cross" d="M20.5 13.5h7v7h7v7h-7v7h-7v-7h-7v-7h7z"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Northcrest</span><span class="brand-sub">Multispeciality Hospital</span></span>
+        </a>
+
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li class="has-sub">
+            <button class="nav-link" type="button" aria-expanded="false" aria-controls="home-sub">Home <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+            <ul class="submenu" id="home-sub"><li><a href="index.html" >Home 1</a></li><li><a href="home-2.html" >Home 2</a></li></ul>
+          </li>
+          <li><a class="nav-link" href="about.html" >About</a></li>
+          <li><a class="nav-link" href="departments.html" >Departments</a></li>
+          <li><a class="nav-link" href="doctors.html" >Doctors</a></li>
+          <li><a class="nav-link" href="blog.html" >Blog</a></li>
+          <li><a class="nav-link" href="contact.html" >Contact</a></li>
+          <li><a class="nav-link" href="dashboard.html" >Dashboard</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="ctl ctl-icon" type="button" data-theme-toggle aria-label="Switch to dark theme" aria-pressed="false"><svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg><svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+        <button class="ctl ctl-icon" type="button" data-dir-toggle aria-label="Switch to right-to-left layout" aria-pressed="false"><span class="dir-txt" aria-hidden="true"><span class="d-to-rtl">RTL</span><span class="d-to-ltr">LTR</span></span></button>
+        <a class="ctl btn btn-secondary btn-login" href="login.html" data-nav-login>Log in</a>
+        <a class="ctl btn btn-primary" href="contact.html#appointment" data-nav-cta>Book appointment</a>
+      </div>
+
+      <button class="ctl ctl-icon menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <svg class="i-menu" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="i-close" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
+      <nav class="container" aria-label="Mobile">
+        <p class="mm-label">Home</p>
+        <ul class="mm-list mm-sub"><li><a href="index.html" >Home 1</a></li><li><a href="home-2.html" >Home 2</a></li></ul>
+        <ul class="mm-list">
+          <li><a href="about.html" >About</a></li>
+          <li><a href="departments.html" >Departments</a></li>
+          <li><a href="doctors.html" >Doctors</a></li>
+          <li><a href="blog.html" >Blog</a></li>
+          <li><a href="contact.html" >Contact</a></li>
+          <li><a href="dashboard.html" >Dashboard</a></li>
+        </ul>
+        <a class="btn btn-secondary btn-block mm-login" href="login.html">Log in</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+  <section class="title-band"><div class="container"><p class="eyebrow">Help centre</p><h1>How can we help?</h1><p>Search answers about appointments, reports, billing and insurance, and visiting hours.</p>
+  <div class="help-search" role="search">
+    <label class="sr-only" for="helpSearch">Search the help centre</label>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="helpSearch" type="search" placeholder="Try report, cashless or ICU" autocomplete="off">
+  </div>
+  <p class="help-count" id="helpCount" aria-live="polite">16 answers in 4 topics</p>
+</div></section>
+<section class="section" id="answers" aria-labelledby="answers-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Browse by topic</p>
+      <h2 id="answers-title">Answers to common questions</h2>
+      <p>Pick a topic or search above. Every answer is reviewed by our patient services team.</p>
+    </header>
+    <nav class="help-topics" aria-label="Help topics"><a href="#help-appointments">Appointments</a><a href="#help-reports">Medical reports</a><a href="#help-billing">Billing and insurance</a><a href="#help-visiting">Visiting hours</a></nav>
+    <div class="faq help-faq">
+      <div class="faq-group" id="help-appointments" data-help-group>
+        <h3>Appointments</h3>
+        <div class="faq-list">
+          <details class="faq-item" name="faq-appointments"><summary>How do I book an appointment?</summary><div class="faq-answer"><p>Use the request form on our Contact page, call the helpline on +91 80 4718 2200, or log in to your patient dashboard to pick a doctor, date and slot instantly.</p></div></details>
+          <details class="faq-item" name="faq-appointments"><summary>Can I reschedule or cancel an appointment?</summary><div class="faq-answer"><p>Yes. Open Appointments in your dashboard and choose Reschedule or Cancel, or call the helpline. Please give at least four hours' notice so another patient can use the slot.</p></div></details>
+          <details class="faq-item" name="faq-appointments"><summary>Do you offer video consultations?</summary><div class="faq-answer"><p>Yes, for follow-ups, report reviews and second opinions. Choose Video when booking in the dashboard. You will get a secure link by SMS and email 15 minutes before the call.</p></div></details>
+          <details class="faq-item" name="faq-appointments"><summary>How long will I wait on the day?</summary><div class="faq-answer"><p>Most patients are seen within 20 minutes of their slot. Your token number and live queue position appear on the screens outside each OPD and in your dashboard.</p></div></details>
+        </div>
+      </div>
+      <div class="faq-group" id="help-reports" data-help-group>
+        <h3>Medical reports</h3>
+        <div class="faq-list">
+          <details class="faq-item" name="faq-reports"><summary>When will my lab reports be ready?</summary><div class="faq-answer"><p>Routine blood tests are ready the same day, usually within six hours. Cultures take two to three days and biopsy reports five to seven working days. We send an SMS when each report is ready.</p></div></details>
+          <details class="faq-item" name="faq-reports"><summary>How do I view or download my reports?</summary><div class="faq-answer"><p>Log in to your dashboard and open Reports. You can view values with normal ranges, download a PDF or share a secure link with another doctor.</p></div></details>
+          <details class="faq-item" name="faq-reports"><summary>Can I get my scan images (CT, MRI) on a disc?</summary><div class="faq-answer"><p>Yes. Request a copy at the radiology desk or from your dashboard. Digital images are also available through a secure viewer link at no extra cost.</p></div></details>
+          <details class="faq-item" name="faq-reports"><summary>How do I get my discharge summary or medical records?</summary><div class="faq-answer"><p>Your discharge summary is handed over on the day you leave and added to your dashboard. For a full copy of your records, apply at the medical records desk with photo ID; copies are ready within three working days.</p></div></details>
+        </div>
+      </div>
+      <div class="faq-group" id="help-billing" data-help-group>
+        <h3>Billing and insurance</h3>
+        <div class="faq-list">
+          <details class="faq-item" name="faq-billing"><summary>Which insurers and TPAs do you accept?</summary><div class="faq-answer"><p>We are empanelled with most major health insurers and TPAs, plus CGHS, ECHS and many corporate schemes. Ask the insurance desk near Gate 1 to confirm your policy before a planned admission.</p></div></details>
+          <details class="faq-item" name="faq-billing"><summary>How does cashless admission work?</summary><div class="faq-answer"><p>Bring your policy card and photo ID. Our insurance desk sends the pre-authorisation request to your insurer, usually approved within four to six hours. You pay only non-covered items and any co-pay at discharge.</p></div></details>
+          <details class="faq-item" name="faq-billing"><summary>How can I pay my bills?</summary><div class="faq-answer"><p>Pay by UPI, card or net banking in your dashboard under Billing, or at any billing counter. You receive an itemised receipt by email straight away.</p></div></details>
+          <details class="faq-item" name="faq-billing"><summary>Can I get an estimate before a procedure?</summary><div class="faq-answer"><p>Yes. Ask your doctor's coordinator or the billing desk for a written estimate. It lists the room category, procedure, implants, medicines and expected length of stay.</p></div></details>
+        </div>
+      </div>
+      <div class="faq-group" id="help-visiting" data-help-group>
+        <h3>Visiting hours</h3>
+        <div class="faq-list">
+          <details class="faq-item" name="faq-visiting"><summary>What are the visiting hours for wards?</summary><div class="faq-answer"><p>General and private wards welcome visitors from 11:00 to 13:00 and 17:00 to 20:00. Two visitors are allowed at a time, and one attendant may stay overnight.</p></div></details>
+          <details class="faq-item" name="faq-visiting"><summary>Can I visit a patient in the ICU?</summary><div class="faq-answer"><p>One close relative may visit for 15 minutes at 12:00 and 18:00. The ICU doctor briefs the family every day at 16:00 in the family lounge on Level 3.</p></div></details>
+          <details class="faq-item" name="faq-visiting"><summary>Are children allowed to visit?</summary><div class="faq-answer"><p>Children under 12 may visit general wards with an adult, but not the ICU, NICU or oncology day-care, to protect patients from infection.</p></div></details>
+          <details class="faq-item" name="faq-visiting"><summary>Is there food, parking and a place to stay for families?</summary><div class="faq-answer"><p>The ground-floor cafeteria is open 7:00 to 23:00, and paid parking runs 24 hours. Our help desk can suggest nearby guest houses with patient discounts.</p></div></details>
+        </div>
+      </div>
+    </div>
+    <p class="empty-note" id="helpEmpty" hidden>No answers match your search. Try another word, or <a href="contact.html#appointment">ask our team directly</a>.</p>
+  </div>
+</section>
+<section class="section section--tint" aria-labelledby="help-cta-title">
+  <div class="container">
+    <div class="cta-band">
+      <p class="eyebrow">Still need help?</p>
+      <h2 id="help-cta-title">Talk to our help desk</h2>
+      <p>Call <a class="cta-tel" href="tel:+918047182200"><span class="ltr-num">+91 80 4718 2200</span></a>, every day from 7:00 to 22:00, or send us a request online.</p>
+      <div class="hero-ctas"><a class="btn btn-primary btn-lg" href="contact.html#appointment">Request an appointment</a><a class="btn btn-secondary btn-lg" href="login.html">Open the patient portal</a></div>
+    </div>
+  </div>
+</section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-news">
+      <div class="news-text">
+        <span class="icon-badge" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+        <div><h2 class="news-title">Monthly health tips from our doctors</h2><p>Check-up reminders, seasonal advice and new clinics. No spam, unsubscribe any time.</p></div>
+      </div>
+      <form class="news-form" data-validate novalidate data-success-message="Thank you. Your first health tips email arrives next month.">
+        <div class="field"><label class="sr-only" for="news-email">Email address</label><input id="news-email" name="email" type="email" autocomplete="email" placeholder="Your email address" required></div>
+        <button class="btn btn-primary" type="submit">Subscribe</button>
+        <p class="form-success" data-form-success role="status" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span data-success-text>Subscribed.</span></p>
+      </form>
+    </div>
+
+    <div class="container footer-grid">
+      <div class="f-brand">
+        <a class="brand" href="index.html" aria-label="Northcrest Multispeciality Hospital, home">
+          <svg class="brand-mark" viewBox="0 0 48 48" width="42" height="42" aria-hidden="true" focusable="false">
+            <path class="mark-shield" d="M24 3 6 9.5v12.2C6 33.4 13.7 41.9 24 45c10.3-3.1 18-11.6 18-23.3V9.5z"/>
+            <path class="mark-cross" d="M20.5 13.5h7v7h7v7h-7v7h-7v-7h-7v-7h7z"/>
+          </svg>
+          <span class="brand-text"><span class="brand-name">Northcrest</span><span class="brand-sub">Multispeciality Hospital</span></span>
+        </a>
+
+        <p class="f-desc">A 450-bed multispeciality hospital in north Bengaluru with 12 departments, a 24/7 emergency and trauma centre and a secure patient portal.</p>
+        <ul class="f-contact">
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>21 Outer Ring Road, Hebbal, Bengaluru 560024</span></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><a href="tel:+918047182200"><span class="ltr-num">+91 80 4718 2200</span></a></li>
+          <li><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><a href="mailto:care@northcrest.example">care@northcrest.example</a></li>
+        </ul>
+      </div>
+
+      <nav class="f-col" aria-labelledby="f-quick">
+        <h2 id="f-quick">Quick links</h2>
+        <ul>
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="home-2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="departments.html">Departments</a></li>
+          <li><a href="doctors.html">Doctors</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+        </ul>
+      </nav>
+      <nav class="f-col" aria-labelledby="f-depts">
+        <h2 id="f-depts">Departments</h2>
+        <ul>
+          <li><a href="department-cardiology.html">Cardiology</a></li>
+          <li><a href="department-neurology.html">Neurology</a></li>
+          <li><a href="department-orthopaedics.html">Orthopaedics</a></li>
+          <li><a href="department-oncology.html">Oncology</a></li>
+          <li><a href="department-paediatrics.html">Paediatrics</a></li>
+          <li><a href="department-gynaecology.html">Obstetrics &amp; Gynaecology</a></li>
+          <li><a href="departments.html">All 12 departments</a></li>
+        </ul>
+      </nav>
+      <nav class="f-col" aria-labelledby="f-patients">
+        <h2 id="f-patients">Patient services</h2>
+        <ul>
+          <li><a href="contact.html#appointment">Book appointment</a></li>
+          <li><a href="login.html">Patient log in</a></li>
+          <li><a href="help.html">Help and FAQ</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bar">
+      <div class="container footer-bottom">
+        <p>&copy; <span data-year>2026</span> Northcrest Multispeciality Hospital. A fictional hospital for demonstration. Emergency: <a href="tel:108"><span class="ltr-num">108</span></a>.</p>
+        <ul class="social" aria-label="Northcrest on social media">
+          <li><a href="https://www.facebook.com/" aria-label="Facebook" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v7h4v-7h3l1-4h-4V8z"/></svg></a></li>
+          <li><a href="https://www.instagram.com/" aria-label="Instagram" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg></a></li>
+          <li><a href="https://www.youtube.com/" aria-label="YouTube" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></svg></a></li>
+          <li><a href="https://www.linkedin.com/" aria-label="LinkedIn" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></a></li>
+          <li><a href="https://x.com/" aria-label="X" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M4 4l16 16M20 4 4 20"/></svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+/* blog articles (blog-post-1..7): title band, framed cover, body + aside, author box, related */
+.post-head { padding-bottom: clamp(96px, 12vw, 150px); }
+.post-head h1 { max-width: 24ch; }
+.post-dek { max-width: 640px; }
+.post-meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 10px 18px; color: var(--muted); font-size: var(--fs-small); margin-top: var(--s2); }
+.post-meta .author { border-top: 0; padding-top: 0; text-align: start; }
+.post-meta-sep { width: 1px; height: 28px; background: var(--line-strong); }
+.post-cover-wrap { max-width: calc(1040px + 2 * var(--gutter, 20px)); margin-top: clamp(-130px, -10vw, -72px); position: relative; }
+.post-cover { margin: 0; padding: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-xl); box-shadow: var(--shadow); }
+.post-cover img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; object-position: center 40%; border-radius: var(--r-md); }
+.post-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s6); max-width: calc(1040px + 2 * var(--gutter, 20px)); }
+.post-body { margin-inline: 0; max-width: 70ch; }
+.post-body .table-wrap { margin-block: var(--s2); }
+.post-body .callout { background: var(--emergency-soft); border: 1px solid color-mix(in srgb, var(--emergency) 35%, transparent); border-radius: var(--r-md); padding: 16px 20px; }
+.post-body .note-small { font-size: var(--fs-small); color: var(--muted); padding-top: var(--s4); border-top: 1px solid var(--line); }
+.post-aside { display: grid; gap: var(--s4); align-content: start; }
+.post-keys { border-top: 3px solid var(--accent); }
+.post-panel-title { font-size: 1.125rem; margin-bottom: var(--s3); }
+.post-toc ol { display: grid; gap: 8px; padding-inline-start: 1.3em; }
+.post-toc li { list-style: decimal; color: var(--muted); font-size: var(--fs-small); }
+.post-toc a { color: var(--primary-ink); font-weight: 600; text-decoration: none; }
+.post-toc a:hover { text-decoration: underline; }
+.post-body h2 { scroll-margin-top: calc(var(--header-h) + 16px); }
+.post-share .btn { width: 100%; }
+@media (min-width: 1024px) { .post-layout { grid-template-columns: minmax(0, 1fr) 300px; gap: clamp(32px, 4vw, 56px); } }
+.author-box {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: var(--s5); align-items: start;
+  padding: clamp(20px, 3vw, 32px); margin-bottom: var(--section-y);
+  background: var(--sand); border: 1px solid var(--line); border-radius: var(--r-lg);
+}
+.author-box .author-box-photo { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; object-position: center 25%; box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--accent); }
+.author-box-name { font-size: 1.375rem; margin-top: var(--s2); }
+.author-box-role { color: var(--primary-ink); font-weight: 600; font-size: var(--fs-small); margin-bottom: var(--s2); }
+@media (max-width: 479.98px) { .author-box { grid-template-columns: minmax(0, 1fr); } }
+@media (min-width: 640px) and (max-width: 1023.98px) { .related-grid { grid-template-columns: minmax(0, 1fr); } }
+.related-card .card-kicker > span:last-child { color: var(--muted); }
+.related-card .card-kicker { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 6px; }

@@ -1,0 +1,58 @@
+---
+layout: app
+title: Prescriptions | Northcrest patient portal
+description: Your active and past prescriptions from Northcrest doctors, daily dosage schedule and pharmacy refills with pickup or home delivery.
+app_nav: prescriptions
+app_title: Prescriptions
+css: dashboard-prescriptions
+js: dashboard-prescriptions
+---
+<div class="page-head"><div><h1>Prescriptions</h1><p>Every medicine your Northcrest doctors have prescribed, with your daily schedule and one-tap refills.</p></div>
+  <div class="page-head-actions"><button class="btn btn-primary" type="button" id="refillAll">Request a refill</button></div></div>
+
+<section class="widget" aria-labelledby="sch-title">
+  <div class="w-head"><h2 id="sch-title">Daily dosage schedule</h2><button class="btn btn-secondary btn-sm" type="button" id="remindBtn">Set reminders</button></div>
+  <div class="table-wrap"><table class="table table--compact dose-table"><thead><tr><th scope="col">Medicine</th><th scope="col" class="dose-col">Morning</th><th scope="col" class="dose-col">Afternoon</th><th scope="col" class="dose-col">Night</th><th scope="col">How to take</th></tr></thead><tbody id="doseRows"></tbody></table></div>
+  <p class="field-hint dose-key">1 = one tablet or sachet. A dash means no dose at that time.</p>
+</section>
+
+<section class="widget" aria-labelledby="act-title" id="active">
+  <div class="w-head"><h2 id="act-title">Active prescriptions</h2><span class="badge" id="actCount">0</span></div>
+  <div class="rx-grid" id="rxActive"></div>
+</section>
+
+<section class="widget" aria-labelledby="rf-title" id="refillsBox">
+  <div class="w-head"><h2 id="rf-title">Refill requests</h2></div>
+  <div class="row-list" id="refillList"></div>
+</section>
+
+<section class="widget" aria-labelledby="past-title">
+  <div class="w-head"><h2 id="past-title">Past prescriptions</h2></div>
+  <div class="table-wrap"><table class="table table--compact"><thead><tr><th scope="col">Medicine</th><th scope="col">Prescribed by</th><th scope="col">Course</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="rxPast"></tbody></table></div>
+</section>
+
+<div class="modal" id="m-refill" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog--wide" role="dialog" aria-modal="true" aria-labelledby="m-refill-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-refill-title">Request a refill</h2>
+    <p>The Northcrest pharmacy checks every request with your doctor before dispensing.</p>
+    <form class="form" data-validate novalidate data-no-reset id="refillForm">
+      <fieldset class="rf-set"><legend class="label">Medicines</legend><div class="rf-meds" id="rfMeds"></div><p class="field-error" id="rfMedsError" role="alert"></p></fieldset>
+      <fieldset class="rf-set"><legend class="label">How would you like to receive them?</legend>
+        <div class="rf-mode" role="radiogroup">
+          <label class="option-card"><input type="radio" name="mode" value="pickup" checked><span class="oc-body"><strong>Pharmacy pickup</strong><span>Ready in 2 hours. Free.</span></span></label>
+          <label class="option-card"><input type="radio" name="mode" value="delivery"><span class="oc-body"><strong>Home delivery</strong><span>Next day within 15 km. ₹50, free above ₹500.</span></span></label>
+        </div></fieldset>
+      <div class="field" id="rfPickup"><label for="rf-pharmacy">Pickup counter</label><select id="rf-pharmacy" name="pharmacy" required><option value="">Choose a counter</option><option>Main pharmacy, Block A ground floor (24/7)</option><option>OPD pharmacy, Block B level 1 (8 am to 9 pm)</option></select></div>
+      <div class="form-grid" id="rfDelivery" hidden>
+        <div class="field field--full"><label for="rf-addr">Delivery address</label><input id="rf-addr" name="address" type="text" autocomplete="street-address" placeholder="House number, street, area, city" required disabled></div>
+        <div class="field"><label for="rf-pin">PIN code</label><input id="rf-pin" name="pin" type="text" inputmode="numeric" maxlength="6" placeholder="560038" required disabled><p class="field-error" id="rf-pin-error"></p></div>
+        <div class="field"><label for="rf-phone">Phone for the courier</label><input id="rf-phone" name="phone" type="tel" inputmode="numeric" placeholder="9845012345" required disabled></div>
+      </div>
+      <dl class="summary-list rf-sum" id="rfSum"></dl>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit" id="rfSubmit">Send request</button></div>
+    </form>
+  </div>
+</div>
+<script defer src="js/pages/dashboard-data.js"></script>

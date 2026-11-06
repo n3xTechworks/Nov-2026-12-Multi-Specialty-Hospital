@@ -1,0 +1,667 @@
+{
+  "doctors": [
+    {
+      "id": "doc-1",
+      "name": "Dr Arvind Rao",
+      "gender": "male",
+      "title": "Director & Senior Interventional Cardiologist",
+      "department": "cardiology",
+      "qualifications": [
+        "MBBS",
+        "MD (General Medicine)",
+        "DM (Cardiology)",
+        "FACC"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DM",
+        "FACC"
+      ],
+      "experience": 24,
+      "languages": [
+        "English",
+        "Kannada",
+        "Telugu",
+        "Hindi"
+      ],
+      "opd": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "opdTime": "9:00 to 14:00",
+      "rating": 4.9,
+      "reviews": 612,
+      "fee": 1200,
+      "status": "available",
+      "bio": "Dr Arvind Rao leads the Northcrest Heart Institute and has performed more than 9,000 coronary angioplasties. He set up the hospital's 24/7 primary angioplasty programme for heart attacks and teaches radial-access techniques to young cardiologists.",
+      "education": [
+        [
+          "MBBS",
+          "Bangalore Medical College",
+          "1998"
+        ],
+        [
+          "MD (General Medicine)",
+          "JIPMER, Puducherry",
+          "2002"
+        ],
+        [
+          "DM (Cardiology)",
+          "AIIMS, New Delhi",
+          "2005"
+        ]
+      ],
+      "awards": [
+        "Fellow of the American College of Cardiology (2014)",
+        "Karnataka State Award for Excellence in Cardiac Care (2019)"
+      ]
+    },
+    {
+      "id": "doc-2",
+      "name": "Dr Meera Krishnan",
+      "gender": "female",
+      "title": "Consultant Cardiologist (Heart Failure & Imaging)",
+      "department": "cardiology",
+      "qualifications": [
+        "MBBS",
+        "MD (Medicine)",
+        "DNB (Cardiology)"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DNB"
+      ],
+      "experience": 14,
+      "languages": [
+        "English",
+        "Tamil",
+        "Malayalam",
+        "Hindi"
+      ],
+      "opd": [
+        "Tue",
+        "Thu",
+        "Sat"
+      ],
+      "opdTime": "10:00 to 16:00",
+      "rating": 4.8,
+      "reviews": 348,
+      "fee": 1000,
+      "status": "available",
+      "bio": "Dr Meera Krishnan runs the heart failure clinic and the 3D echocardiography lab. She focuses on women's heart health and helps patients manage long-term heart conditions with clear, practical plans.",
+      "education": [
+        [
+          "MBBS",
+          "Madras Medical College",
+          "2006"
+        ],
+        [
+          "MD (Medicine)",
+          "Kasturba Medical College, Manipal",
+          "2010"
+        ],
+        [
+          "DNB (Cardiology)",
+          "Narayana Institute of Cardiac Sciences",
+          "2013"
+        ]
+      ],
+      "awards": [
+        "Best Young Investigator, Cardiological Society of India (2017)"
+      ]
+    },
+    {
+      "id": "doc-3",
+      "name": "Dr Karthik Iyer",
+      "gender": "male",
+      "title": "Senior Consultant Neurologist",
+      "department": "neurology",
+      "qualifications": [
+        "MBBS",
+        "MD (Medicine)",
+        "DM (Neurology)"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DM"
+      ],
+      "experience": 18,
+      "languages": [
+        "English",
+        "Tamil",
+        "Kannada"
+      ],
+      "opd": [
+        "Mon",
+        "Tue",
+        "Thu"
+      ],
+      "opdTime": "9:30 to 15:30",
+      "rating": 4.9,
+      "reviews": 421,
+      "fee": 1100,
+      "status": "busy",
+      "bio": "Dr Karthik Iyer heads the stroke programme and epilepsy clinic. He has helped cut Northcrest's door-to-needle time for stroke to under 40 minutes and runs a monthly support group for people living with epilepsy.",
+      "education": [
+        [
+          "MBBS",
+          "Stanley Medical College, Chennai",
+          "2002"
+        ],
+        [
+          "MD (Medicine)",
+          "Christian Medical College, Vellore",
+          "2006"
+        ],
+        [
+          "DM (Neurology)",
+          "NIMHANS, Bengaluru",
+          "2009"
+        ]
+      ],
+      "awards": [
+        "Indian Stroke Association Gold Medal (2018)",
+        "Neurological Society of India Young Neurologist Award (2022)"
+      ]
+    },
+    {
+      "id": "doc-4",
+      "name": "Dr Ananya Desai",
+      "gender": "female",
+      "title": "Consultant, Sports Medicine & Arthroscopy",
+      "department": "orthopaedics",
+      "qualifications": [
+        "MBBS",
+        "DNB (Orthopaedics)",
+        "Fellowship in Sports Surgery"
+      ],
+      "chips": [
+        "MBBS",
+        "DNB",
+        "FSS"
+      ],
+      "experience": 11,
+      "languages": [
+        "English",
+        "Marathi",
+        "Hindi",
+        "Gujarati"
+      ],
+      "opd": [
+        "Tue",
+        "Thu",
+        "Fri"
+      ],
+      "opdTime": "11:00 to 18:00",
+      "rating": 4.9,
+      "reviews": 276,
+      "fee": 1000,
+      "status": "available",
+      "bio": "Dr Ananya Desai treats ligament, cartilage and shoulder injuries in athletes and weekend runners alike. She works closely with the physiotherapy team on return-to-sport programmes and is team doctor to a state football club.",
+      "education": [
+        [
+          "MBBS",
+          "Seth GS Medical College, Mumbai",
+          "2009"
+        ],
+        [
+          "DNB (Orthopaedics)",
+          "Sancheti Institute, Pune",
+          "2013"
+        ],
+        [
+          "Fellowship in Sports Surgery",
+          "Sydney Orthopaedic Research Institute",
+          "2015"
+        ]
+      ],
+      "awards": [
+        "ISAKOS Travelling Fellowship (2018)"
+      ]
+    },
+    {
+      "id": "doc-5",
+      "name": "Dr Rahul Menon",
+      "gender": "male",
+      "title": "Senior Consultant, Joint Replacement",
+      "department": "orthopaedics",
+      "qualifications": [
+        "MBBS",
+        "MS (Orthopaedics)",
+        "MCh (Orth), UK",
+        "Fellowship in Arthroplasty"
+      ],
+      "chips": [
+        "MBBS",
+        "MS",
+        "MCh"
+      ],
+      "experience": 20,
+      "languages": [
+        "English",
+        "Malayalam",
+        "Hindi"
+      ],
+      "opd": [
+        "Mon",
+        "Wed",
+        "Sat"
+      ],
+      "opdTime": "10:00 to 15:00",
+      "rating": 4.8,
+      "reviews": 530,
+      "fee": 1100,
+      "status": "available",
+      "bio": "Dr Rahul Menon specialises in knee and hip replacement and revision surgery. He introduced computer-navigated knee replacement at Northcrest and his enhanced recovery pathway has most patients walking on the first day after surgery.",
+      "education": [
+        [
+          "MBBS",
+          "Government Medical College, Thiruvananthapuram",
+          "2001"
+        ],
+        [
+          "MS (Orthopaedics)",
+          "Kasturba Medical College, Manipal",
+          "2005"
+        ],
+        [
+          "MCh (Orthopaedics)",
+          "University of Liverpool, UK",
+          "2008"
+        ]
+      ],
+      "awards": [
+        "Best Paper, Indian Orthopaedic Association Conference (2016)"
+      ]
+    },
+    {
+      "id": "doc-6",
+      "name": "Dr Shalini Kulkarni",
+      "gender": "female",
+      "title": "Senior Consultant, Medical Oncology",
+      "department": "oncology",
+      "qualifications": [
+        "MBBS",
+        "MD (Medicine)",
+        "DM (Medical Oncology)"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DM"
+      ],
+      "experience": 16,
+      "languages": [
+        "English",
+        "Marathi",
+        "Kannada",
+        "Hindi"
+      ],
+      "opd": [
+        "Mon",
+        "Wed",
+        "Thu"
+      ],
+      "opdTime": "9:00 to 13:00",
+      "rating": 4.9,
+      "reviews": 389,
+      "fee": 1200,
+      "status": "available",
+      "bio": "Dr Shalini Kulkarni chairs the Northcrest tumour board and treats breast, lung and gastrointestinal cancers. She believes every patient deserves a written plan in plain language and leads the hospital's nurse navigator programme.",
+      "education": [
+        [
+          "MBBS",
+          "BJ Medical College, Pune",
+          "2004"
+        ],
+        [
+          "MD (Medicine)",
+          "KEM Hospital, Mumbai",
+          "2008"
+        ],
+        [
+          "DM (Medical Oncology)",
+          "Tata Memorial Centre, Mumbai",
+          "2011"
+        ]
+      ],
+      "awards": [
+        "ESMO Fellowship (2013)",
+        "Compassion in Cancer Care Award (2021)"
+      ]
+    },
+    {
+      "id": "doc-7",
+      "name": "Dr Farhan Sheikh",
+      "gender": "male",
+      "title": "Senior Consultant Paediatrician",
+      "department": "paediatrics",
+      "qualifications": [
+        "MBBS",
+        "MD (Paediatrics)",
+        "Fellowship in Paediatric Pulmonology"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "FPP"
+      ],
+      "experience": 17,
+      "languages": [
+        "English",
+        "Hindi",
+        "Urdu",
+        "Kannada"
+      ],
+      "opd": [
+        "Mon",
+        "Tue",
+        "Fri",
+        "Sat"
+      ],
+      "opdTime": "9:00 to 14:00",
+      "rating": 4.9,
+      "reviews": 702,
+      "fee": 900,
+      "status": "available",
+      "bio": "Dr Farhan Sheikh cares for children from infancy to adolescence, with a special interest in asthma and allergies. Parents value his calm manner and the written care plans he gives for every chronic condition.",
+      "education": [
+        [
+          "MBBS",
+          "Osmania Medical College, Hyderabad",
+          "2003"
+        ],
+        [
+          "MD (Paediatrics)",
+          "Lady Hardinge Medical College, New Delhi",
+          "2007"
+        ],
+        [
+          "Fellowship in Paediatric Pulmonology",
+          "Indira Gandhi Institute of Child Health",
+          "2009"
+        ]
+      ],
+      "awards": [
+        "IAP Karnataka Best Paediatrician (2020)"
+      ]
+    },
+    {
+      "id": "doc-8",
+      "name": "Dr Amara Nwosu",
+      "gender": "female",
+      "title": "Consultant Neonatologist",
+      "department": "paediatrics",
+      "qualifications": [
+        "MBBS",
+        "MD (Paediatrics)",
+        "DM (Neonatology)"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DM"
+      ],
+      "experience": 12,
+      "languages": [
+        "English",
+        "Hindi",
+        "French"
+      ],
+      "opd": [
+        "Wed",
+        "Thu",
+        "Sat"
+      ],
+      "opdTime": "10:00 to 14:00",
+      "rating": 4.8,
+      "reviews": 215,
+      "fee": 1000,
+      "status": "busy",
+      "bio": "Dr Amara Nwosu leads the level III NICU, caring for premature and critically ill newborns. She champions kangaroo care and family-centred rounds so parents are part of every decision.",
+      "education": [
+        [
+          "MBBS",
+          "University of Lagos College of Medicine",
+          "2008"
+        ],
+        [
+          "MD (Paediatrics)",
+          "JIPMER, Puducherry",
+          "2012"
+        ],
+        [
+          "DM (Neonatology)",
+          "PGIMER, Chandigarh",
+          "2015"
+        ]
+      ],
+      "awards": [
+        "National Neonatology Forum Young Achiever (2019)"
+      ]
+    },
+    {
+      "id": "doc-9",
+      "name": "Dr Martin Ellis",
+      "gender": "male",
+      "title": "Head, Obstetrics & Gynaecology",
+      "department": "gynaecology",
+      "qualifications": [
+        "MBBS",
+        "MD (Obstetrics & Gynaecology)",
+        "FRCOG"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "FRCOG"
+      ],
+      "experience": 28,
+      "languages": [
+        "English",
+        "German",
+        "Hindi"
+      ],
+      "opd": [
+        "Mon",
+        "Wed",
+        "Fri"
+      ],
+      "opdTime": "10:00 to 16:00",
+      "rating": 4.9,
+      "reviews": 655,
+      "fee": 1100,
+      "status": "available",
+      "bio": "Dr Martin Ellis has delivered more than 8,000 babies across the UK and India and leads the high-risk pregnancy service. He supports natural birth where it is safe and is known for clear, unhurried explanations at every stage of pregnancy.",
+      "education": [
+        [
+          "MBBS",
+          "University of Edinburgh",
+          "1996"
+        ],
+        [
+          "MD (Obstetrics & Gynaecology)",
+          "University of Manchester",
+          "2002"
+        ],
+        [
+          "FRCOG",
+          "Royal College of Obstetricians and Gynaecologists, London",
+          "2011"
+        ]
+      ],
+      "awards": [
+        "RCOG Excellence in Maternity Care (2016)",
+        "FOGSI Distinguished Service Award (2021)"
+      ]
+    },
+    {
+      "id": "doc-10",
+      "name": "Dr Neha Kapoor",
+      "gender": "female",
+      "title": "Consultant, Laparoscopic Gynaecology & Fertility",
+      "department": "gynaecology",
+      "qualifications": [
+        "MBBS",
+        "DNB (Obstetrics & Gynaecology)",
+        "Fellowship in Reproductive Medicine"
+      ],
+      "chips": [
+        "MBBS",
+        "DNB",
+        "FRM"
+      ],
+      "experience": 10,
+      "languages": [
+        "English",
+        "Hindi",
+        "Punjabi"
+      ],
+      "opd": [
+        "Tue",
+        "Thu",
+        "Sat"
+      ],
+      "opdTime": "11:00 to 18:00",
+      "rating": 4.8,
+      "reviews": 241,
+      "fee": 1000,
+      "status": "available",
+      "bio": "Dr Neha Kapoor performs keyhole surgery for fibroids, endometriosis and ovarian cysts and runs the fertility clinic. She works with couples step by step, starting with simple tests before any advanced treatment.",
+      "education": [
+        [
+          "MBBS",
+          "Maulana Azad Medical College, New Delhi",
+          "2010"
+        ],
+        [
+          "DNB (Obstetrics & Gynaecology)",
+          "Sir Ganga Ram Hospital, New Delhi",
+          "2014"
+        ],
+        [
+          "Fellowship in Reproductive Medicine",
+          "Manipal Hospital, Bengaluru",
+          "2016"
+        ]
+      ],
+      "awards": [
+        "AGES Best Video Presentation (2020)"
+      ]
+    },
+    {
+      "id": "doc-11",
+      "name": "Dr Imran Qureshi",
+      "gender": "male",
+      "title": "Consultant Gastroenterologist & Hepatologist",
+      "department": "gastroenterology",
+      "qualifications": [
+        "MBBS",
+        "MD (Medicine)",
+        "DM (Gastroenterology)"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "DM"
+      ],
+      "experience": 15,
+      "languages": [
+        "English",
+        "Hindi",
+        "Urdu",
+        "Kannada"
+      ],
+      "opd": [
+        "Mon",
+        "Thu",
+        "Sat"
+      ],
+      "opdTime": "9:00 to 14:00",
+      "rating": 4.7,
+      "reviews": 318,
+      "fee": 1000,
+      "status": "away",
+      "bio": "Dr Imran Qureshi treats liver disease, acid reflux, IBS and inflammatory bowel disease and performs advanced endoscopy including ERCP and endoscopic ultrasound.",
+      "education": [
+        [
+          "MBBS",
+          "Aligarh Muslim University",
+          "2005"
+        ],
+        [
+          "MD (Medicine)",
+          "Kasturba Medical College, Manipal",
+          "2009"
+        ],
+        [
+          "DM (Gastroenterology)",
+          "Sanjay Gandhi PGIMS, Lucknow",
+          "2012"
+        ]
+      ],
+      "awards": [
+        "Indian Society of Gastroenterology Young Gastroenterologist Award (2016)"
+      ]
+    },
+    {
+      "id": "doc-12",
+      "name": "Dr Rosemary Thomas",
+      "gender": "female",
+      "title": "Senior Consultant Pulmonologist",
+      "department": "pulmonology",
+      "qualifications": [
+        "MBBS",
+        "MD (Respiratory Medicine)",
+        "Fellowship in Sleep Medicine"
+      ],
+      "chips": [
+        "MBBS",
+        "MD",
+        "FSM"
+      ],
+      "experience": 19,
+      "languages": [
+        "English",
+        "Malayalam",
+        "Tamil",
+        "Hindi"
+      ],
+      "opd": [
+        "Tue",
+        "Wed",
+        "Fri"
+      ],
+      "opdTime": "10:00 to 16:00",
+      "rating": 4.8,
+      "reviews": 297,
+      "fee": 1000,
+      "status": "available",
+      "bio": "Dr Rosemary Thomas manages asthma, COPD, interstitial lung disease and sleep apnoea. She set up Northcrest's sleep lab and pulmonary rehabilitation programme for people with long-term breathing problems.",
+      "education": [
+        [
+          "MBBS",
+          "Christian Medical College, Vellore",
+          "2002"
+        ],
+        [
+          "MD (Respiratory Medicine)",
+          "Vallabhbhai Patel Chest Institute, Delhi",
+          "2006"
+        ],
+        [
+          "Fellowship in Sleep Medicine",
+          "University of Toronto",
+          "2009"
+        ]
+      ],
+      "awards": [
+        "Indian Chest Society Oration (2020)"
+      ]
+    }
+  ]
+}

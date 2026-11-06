@@ -1,0 +1,74 @@
+---
+layout: auth
+title: Create an account | Northcrest patient portal
+description: Register for the Northcrest Multispeciality Hospital patient portal in three short steps.
+css: signup
+js: signup
+---
+<main id="main" class="auth">
+  <section class="auth-panel" aria-label="About the Northcrest patient portal">
+    {{> logo}}
+    <h1>One account for your whole family's care at Northcrest.</h1>
+    <ul class="auth-points">
+      <li><strong>Link family members</strong><span>Book and track visits for children and parents from one login.</span></li>
+      <li><strong>Your UHID, always with you</strong><span>Show your hospital ID at the desk and skip registration.</span></li>
+      <li><strong>Private by design</strong><span>Your records are encrypted and never shared without consent.</span></li>
+    </ul>
+    <div class="auth-media"><img src="images/signup-image-1600.webp" srcset="images/signup-image-800.webp 800w, images/signup-image-1600.webp 1600w" sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1067" alt="A smiling doctor examining a baby sitting on the mother's lap"></div>
+  </section>
+  <section class="auth-form-wrap" aria-labelledby="auth-title">
+    <div class="auth-form">
+      <div class="auth-head"><h2 id="auth-title">Create your patient account</h2><p class="sub" id="suSub">Takes about two minutes. Free for every Northcrest patient.</p></div>
+      <ol class="stepper auth-steps" aria-label="Sign-up progress" id="suSteps"><li class="is-current"><span>Account</span></li><li><span>Verify</span></li><li><span>Health details</span></li></ol>
+      <div data-su-step="1">
+        <div class="social-login social-login--top">
+          <div class="social-login-row">
+          <button class="btn-social" type="button" aria-label="Continue with Google" data-social="Google"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" stroke="none" d="M21.6 12.2c0-.7-.1-1.4-.2-2H12v3.8h5.4a4.6 4.6 0 0 1-2 3v2.5h3.2c1.9-1.7 3-4.3 3-7.3z"/><path fill="#34A853" stroke="none" d="M12 22c2.7 0 5-.9 6.6-2.4l-3.2-2.5c-.9.6-2 1-3.4 1a6 6 0 0 1-5.6-4.1H3.1v2.6A10 10 0 0 0 12 22z"/><path fill="#FBBC05" stroke="none" d="M6.4 14a6 6 0 0 1 0-4V7.4H3.1a10 10 0 0 0 0 9.2z"/><path fill="#EA4335" stroke="none" d="M12 6c1.5 0 2.8.5 3.9 1.5l2.9-2.9A10 10 0 0 0 3.1 7.4L6.4 10A6 6 0 0 1 12 6z"/></svg></button>
+          <button class="btn-social" type="button" aria-label="Continue with Apple" data-social="Apple"><svg class="glyph" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.46 2.22-1.2 3.01-.8.84-2.1 1.5-3.15 1.4-.13-1.1.42-2.25 1.15-3 .82-.85 2.22-1.46 3.2-1.41zM20.5 17.1c-.55 1.27-.8 1.84-1.5 2.96-.98 1.57-2.37 3.52-4.09 3.54-1.53.02-1.92-.99-4-.98-2.07.01-2.5 1-4.04.99-1.72-.02-3.04-1.78-4.02-3.35C.1 15.9-.2 10.7 1.7 7.9 3.05 5.92 5.18 4.76 7.17 4.76c2.02 0 3.3 1.1 4.97 1.1 1.62 0 2.6-1.1 4.95-1.1 1.77 0 3.65.96 4.99 2.62-4.38 2.4-3.67 8.64.42 9.72z"/></svg></button>
+          </div>
+          <p class="divider-text">or sign up with email</p>
+        </div>
+        <form class="form" data-validate novalidate data-no-reset id="suForm">
+          <div class="form-grid">
+            <div class="field"><label for="s-first">First name</label><input id="s-first" name="first-name" data-rule="name" type="text" autocomplete="given-name" placeholder="Priya" required></div>
+            <div class="field"><label for="s-last">Last name</label><input id="s-last" name="last-name" data-rule="name" type="text" autocomplete="family-name" placeholder="Raman" required></div>
+            <div class="field field--full"><label for="s-email">Email address</label><input id="s-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+            <div class="field field--full"><label for="s-phone">Mobile number</label><input id="s-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9845012345" required><p class="field-hint">10-digit mobile, digits only. Used for appointment SMS.</p></div>
+            <div class="field field--full"><label for="s-pw">Create a password</label><div class="pw-wrap"><input id="s-pw" name="new-password" type="password" autocomplete="new-password" data-rule="password" placeholder="At least 8 characters" required><button class="pw-toggle" type="button" data-pw-toggle aria-label="Show password">Show</button></div>
+              <div class="pw-meter" id="pwMeter" aria-hidden="true"><span></span><span></span><span></span><span></span></div><p class="field-hint" id="pwHint" aria-live="polite">At least 8 characters, with a letter and a number.</p></div>
+            <div class="field field--full"><label class="check"><input type="checkbox" name="terms" required> <span>I agree to the <a class="link" href="terms.html">terms of service</a> and <a class="link" href="privacy.html">privacy policy</a>.</span></label></div>
+          </div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Continue</button>
+        </form>
+        <p class="auth-legal">Already registered? <a class="link" href="login.html">Log in</a></p>
+      </div>
+      <div data-su-step="2" hidden>
+        <form class="form" id="verifyForm" data-validate novalidate data-no-reset>
+          <p class="sub-lead">We sent a 6-digit code to <strong id="verifyPhone">your mobile</strong> and <strong id="verifyEmail">your email</strong>. It expires in 10 minutes.</p>
+          <fieldset class="code-field"><legend class="sr-only">6-digit verification code</legend>
+            <div class="code-row" id="codeRow"><input class="code-input" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Digit 1"><input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 2"><input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 3"><input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 4"><input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 5"><input class="code-input" inputmode="numeric" maxlength="1" aria-label="Digit 6"></div>
+            <p class="field-error" id="codeError" role="alert"></p>
+            <p class="field-hint">Demo: any 6 digits work, for example 123456.</p>
+          </fieldset>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Verify and continue</button>
+          <div class="auth-row"><button class="link-btn" type="button" id="resendCode">Resend code</button><button class="link-btn" type="button" data-su-back="1">Change my details</button></div>
+        </form>
+      </div>
+      <div data-su-step="3" hidden>
+        <form class="form" id="prefForm" data-validate novalidate data-no-reset>
+          <p class="sub-lead">A few details so our doctors can prepare for your first visit. Skip it if you prefer and add them later in your profile.</p>
+          <div class="form-grid">
+            <div class="field"><label for="p-dob">Date of birth</label><input id="p-dob" name="dob" type="date" data-rule="required" min="1900-01-01" required></div>
+            <div class="field"><label for="p-gender">Gender</label><select id="p-gender" name="gender" required><option value="">Choose</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></div>
+            <div class="field"><label for="p-blood">Blood group</label><select id="p-blood" name="blood-group"><option value="">Not sure</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+            <div class="field"><label for="p-uhid">Existing UHID (if any)</label><input id="p-uhid" name="uhid" type="text" placeholder="For example 7720-4481"></div>
+          </div>
+          <div class="field"><span class="label" id="p-int">How do you prefer to consult?</span><div class="chips" role="radiogroup" aria-labelledby="p-int" id="prefChips"><button class="chip" type="button" role="radio" aria-checked="true" aria-pressed="true" data-v="in-person">In person</button><button class="chip" type="button" role="radio" aria-checked="false" aria-pressed="false" data-v="video">Video</button><button class="chip" type="button" role="radio" aria-checked="false" aria-pressed="false" data-v="either">Either</button></div></div>
+          <div class="pref-switches"><label class="switch"><input type="checkbox" role="switch" name="sms" checked> Appointment reminders by SMS</label><label class="switch"><input type="checkbox" role="switch" name="reports" checked> Tell me when reports are ready</label></div>
+          <button class="btn btn-primary btn-lg btn-block" type="submit">Finish and open my dashboard</button>
+          <button class="btn btn-secondary btn-block" type="button" id="skipPref">Skip for now</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>

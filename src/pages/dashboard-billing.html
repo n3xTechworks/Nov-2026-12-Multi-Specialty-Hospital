@@ -1,0 +1,100 @@
+---
+layout: app
+title: Billing | Northcrest patient portal
+description: Your outstanding Northcrest bills in rupees, insurance and TPA claim status, saved payment methods and receipts.
+app_nav: billing
+app_title: Billing
+css: dashboard-billing
+js: dashboard-billing
+---
+<div class="page-head"><div><h1>Billing and insurance</h1><p>Itemised bills, your insurance share and claim progress. Billing help: <a class="link" href="tel:+918047182200"><span class="ltr-num">+91 80 4718 2200</span></a>.</p></div></div>
+
+<div class="bill-top">
+  <section class="widget widget--blue balance-card" aria-labelledby="bal-title">
+    <div class="w-head"><h2 id="bal-title">Outstanding total</h2><span id="balStatus"></span></div>
+    <p class="bal-amt" id="balAmt">₹0</p>
+    <p class="bal-sub" id="balSub"></p>
+    <div class="bal-actions"><button class="btn btn-primary" type="button" id="payAllBtn">Pay now</button><button class="btn btn-secondary" type="button" id="emiBtn">Pay in EMIs</button></div>
+    <dl class="bal-foot" id="balFoot"></dl>
+  </section>
+  <section class="widget" aria-labelledby="ins-title">
+    <div class="w-head"><h2 id="ins-title">Insurance policy</h2><span class="pill pill--ok">Active</span></div>
+    <div class="policy" id="policyBox"></div>
+  </section>
+</div>
+
+<section class="widget" aria-labelledby="bills-title">
+  <div class="w-head"><h2 id="bills-title">Bills</h2>
+    <div class="seg" role="group" aria-label="Filter bills" id="billSeg"><button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="open" aria-pressed="false">To pay</button><button type="button" data-f="paid" aria-pressed="false">Paid</button></div></div>
+  <div class="table-wrap"><table class="table table--compact bill-table"><thead><tr><th scope="col">Bill</th><th scope="col">Date</th><th scope="col">Description</th><th scope="col" class="num">Total</th><th scope="col" class="num">Insurance</th><th scope="col" class="num">You pay</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="billRows"></tbody></table></div>
+</section>
+
+<section class="widget" aria-labelledby="clm-title" id="claims">
+  <div class="w-head"><h2 id="clm-title">Insurance and TPA claims</h2><button class="btn btn-secondary btn-sm" type="button" id="newClaim">Start a reimbursement claim</button></div>
+  <div class="claim-list" id="claimList"></div>
+</section>
+
+<section class="widget" aria-labelledby="pm-title">
+  <div class="w-head"><h2 id="pm-title">Payment methods</h2><button class="btn btn-secondary btn-sm" type="button" id="addMethodBtn">Add a card</button></div>
+  <div class="pm-grid" id="pmList"></div>
+</section>
+
+<div class="modal" id="m-pay" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog--wide" role="dialog" aria-modal="true" aria-labelledby="m-pay-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-pay-title">Pay now</h2>
+    <p id="payLead">Secure demo payment. No money will move.</p>
+    <dl class="summary-list pay-sum" id="paySum"></dl>
+    <form class="form" data-validate novalidate data-no-reset id="payForm">
+      <div class="pay-methods" role="radiogroup" aria-label="Pay with" id="payMethods"></div>
+      <div class="form-grid card-fields" id="cardFields">
+        <div class="field field--full"><label for="pay-name">Name on card</label><input id="pay-name" name="card-name" type="text" autocomplete="cc-name" placeholder="Priya Raman" required></div>
+        <div class="field field--full"><label for="pay-num">Card number</label><input id="pay-num" name="card-number" type="text" inputmode="numeric" autocomplete="cc-number" placeholder="4111 1111 1111 1111" maxlength="19" required><p class="field-error" id="pay-num-error"></p></div>
+        <div class="field"><label for="pay-exp">Expiry (MM/YY)</label><input id="pay-exp" name="card-expiry" type="text" inputmode="numeric" autocomplete="cc-exp" placeholder="08/29" maxlength="5" required><p class="field-error" id="pay-exp-error"></p></div>
+        <div class="field"><label for="pay-cvv">CVV</label><input id="pay-cvv" name="card-cvv" type="password" inputmode="numeric" autocomplete="cc-csc" placeholder="3 digits" maxlength="4" required><p class="field-error" id="pay-cvv-error"></p></div>
+        <div class="field field--full"><label class="check"><input type="checkbox" name="save-card" id="paySave"> <span>Save this card for next time</span></label></div>
+      </div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit" id="paySubmit">Pay</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-emi" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-emi-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-emi-title">Pay in EMIs</h2>
+    <p>No-cost EMI on bills above ₹10,000 with partner banks. Our billing team calls within one working day.</p>
+    <form class="form" data-validate novalidate id="emiForm">
+      <div class="field"><label for="emi-months">Spread over</label><select id="emi-months" name="months" required><option value="">Choose</option><option>3 months</option><option>6 months</option><option>9 months</option></select></div>
+      <div class="field"><label for="emi-phone">Best number to call</label><input id="emi-phone" name="phone" type="tel" inputmode="numeric" placeholder="9845012345" required></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit">Request a call</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-claim" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-claim-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-claim-title">Upload documents</h2>
+    <p id="clText">Upload the documents your TPA asked for.</p>
+    <form class="form" data-validate novalidate id="claimForm">
+      <div class="field" id="clBillField"><label for="cl-bill">Bill</label><select id="cl-bill" name="bill" required></select></div>
+      <div class="field"><label for="cl-file">Document (PDF or photo)</label><input id="cl-file" name="document" type="file" accept=".pdf,image/*" required></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit" id="clSubmit">Upload</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-remove" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-remove-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-remove-title">Remove this payment method?</h2>
+    <p id="rmText">You can add it again at any time.</p>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Keep it</button><button class="btn btn-danger" type="button" id="rmConfirm">Remove</button></div>
+  </div>
+</div>
+<script defer src="js/pages/dashboard-data.js"></script>

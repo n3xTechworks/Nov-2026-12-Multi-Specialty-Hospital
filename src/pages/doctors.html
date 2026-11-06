@@ -1,0 +1,91 @@
+---
+title: Doctors | Northcrest Multispeciality Hospital
+description: Find a Northcrest doctor by name, speciality or condition. Qualifications, experience, languages, OPD days and online booking for 12 consultants.
+nav: doctors
+hero: hero-doctors
+hero_alt: A group of Northcrest doctors in white coats
+crumbs: Doctors
+eyebrow: Our doctors
+h1: Find the right doctor
+lead: Search by name, speciality or condition and book an OPD appointment in minutes.
+---
+<!-- ============ DIRECTORY ============ -->
+<section class="section" id="directory" aria-labelledby="dir-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Doctor directory</p>
+      <h2 id="dir-title">Consultants with the qualifications to match</h2>
+      <p>Filter by department or search by name, degree or condition. Open a profile for education, awards and full OPD timings.</p>
+    </header>
+    <div class="doc-tools">
+      <form class="doc-search" role="search" action="doctors.html" data-validate novalidate data-no-reset id="docSearch">
+        <label class="sr-only" for="doc-q">Search doctors by name, speciality or condition</label>
+        <span class="doc-search-icon" aria-hidden="true">{{icon search 20}}</span>
+        <input id="doc-q" name="q" type="search" placeholder="Search a name, speciality or condition, e.g. knee" autocomplete="off">
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+      <div class="chips doc-chips" role="group" aria-label="Filter doctors by department" data-filter-group="#docGrid"><button class="chip" type="button" data-filter="all" aria-pressed="true">All</button><button class="chip" type="button" data-filter="cardiology" aria-pressed="false">Heart care</button><button class="chip" type="button" data-filter="neurology" aria-pressed="false">Brain and spine</button><button class="chip" type="button" data-filter="orthopaedics" aria-pressed="false">Bones and joints</button><button class="chip" type="button" data-filter="oncology" aria-pressed="false">Cancer care</button><button class="chip" type="button" data-filter="paediatrics" aria-pressed="false">Child health</button><button class="chip" type="button" data-filter="gynaecology" aria-pressed="false">Women&#x27;s health</button><button class="chip" type="button" data-filter="gastroenterology" aria-pressed="false">Digestive health</button><button class="chip" type="button" data-filter="pulmonology" aria-pressed="false">Lungs and breathing</button></div>
+      <p class="result-count" id="docCount" data-filter-count data-template="Showing {n} doctors" aria-live="polite">Showing 12 doctors</p>
+    </div>
+    <div class="cards cards--4" id="docGrid">
+{{doctor_cards all}}
+    </div>
+    <div class="empty doc-empty" id="docEmpty" hidden>
+      {{badge search}}
+      <h3>No doctor matches your search</h3>
+      <p id="docEmptyText">Try another name or condition, or ask our helpline to find the right specialist.</p>
+      <button class="btn btn-secondary" type="button" id="docReset">Show all doctors</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING INFO ============ -->
+<section class="section section--tint" id="booking" aria-labelledby="book-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">OPD appointments</p>
+      <h2 id="book-title">How booking a consultation works</h2>
+      <p>Consultation fees are shown on each profile and paid at the desk, by UPI or in the patient portal.</p>
+    </header>
+    <div class="steps">
+      <div class="step"><span class="badge">Step 1</span><h3>Choose your doctor</h3><p>Use the filters above, then press Book appointment to open the patient portal with that doctor selected.</p></div>
+      <div class="step"><span class="badge">Step 2</span><h3>Pick a slot</h3><p>Choose an OPD date and time, in person or by video. You get an SMS and email with your token number.</p></div>
+      <div class="step"><span class="badge">Step 3</span><h3>Arrive 15 minutes early</h3><p>Bring old reports and your medicines. Your prescription and test results appear in the portal afterwards.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-band">
+      <p class="eyebrow">Need help choosing?</p>
+      <h2 id="cta-title">Our care coordinators will match you</h2>
+      <p>Tell us your symptoms and preferred language. We will suggest the right specialist and call you back to confirm.</p>
+      <div class="hero-ctas"><a class="btn btn-primary btn-lg" href="contact.html#appointment">Request a call back</a><a class="btn btn-secondary btn-lg" href="departments.html">See all departments</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROFILE MODAL ============ -->
+<div class="modal" id="doctorModal" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog--wide doc-modal" role="dialog" aria-modal="true" aria-labelledby="dm-name" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="dm-head">
+      <span class="dm-photo-wrap" id="dm-photo"></span>
+      <div class="dm-id">
+        <h2 id="dm-name">Doctor profile</h2>
+        <p class="dm-title" id="dm-title"></p>
+        <ul class="degree-chips" id="dm-chips" aria-label="Qualifications"></ul>
+      </div>
+    </div>
+    <dl class="spec-grid dm-facts" id="dm-facts"></dl>
+    <div class="dm-section"><h3>About</h3><p id="dm-bio"></p></div>
+    <div class="dm-cols">
+      <div class="dm-section"><h3>Education</h3><ul class="dm-list" id="dm-edu"></ul></div>
+      <div class="dm-section"><h3>Awards and memberships</h3><ul class="checklist" id="dm-awards"></ul></div>
+    </div>
+    <div class="dm-actions"><a class="btn btn-primary" id="dm-book" href="dashboard-appointments.html">Book appointment</a><a class="btn btn-secondary" id="dm-dept" href="departments.html">View department</a></div>
+  </div>
+</div>

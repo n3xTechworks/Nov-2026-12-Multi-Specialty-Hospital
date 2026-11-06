@@ -1,0 +1,190 @@
+---
+title: Northcrest Multispeciality Hospital | Expert care, 24/7, in Bengaluru
+description: Northcrest Multispeciality Hospital, Hebbal, Bengaluru: 12 specialities, 120+ consultants, 24/7 emergency and trauma care and an online patient portal.
+nav: home1
+preload: hero-home1
+---
+<section class="hero hero-home1" aria-labelledby="hero-title">
+  <img class="hero-bg" src="images/hero-home1-1600.webp" srcset="images/hero-home1-800.webp 800w, images/hero-home1-1600.webp 1600w, images/hero-home1-2000.webp 2000w" sizes="100vw" width="1600" height="1067" alt="The modern glass entrance of Northcrest Multispeciality Hospital" fetchpriority="high">
+  <div class="hero-shade" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <p class="eyebrow eyebrow-pill">Multispeciality hospital in Hebbal, Bengaluru</p>
+    <h1 id="hero-title">Expert care for every stage of life</h1>
+    <p class="hero-lead">120+ consultants across 12 specialities, a 24/7 emergency and trauma centre, and your reports, bills and appointments in one secure portal.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary btn-lg" href="contact.html#appointment">Book appointment</a>
+      <a class="btn btn-secondary btn-lg" href="departments.html">Explore departments</a>
+    </div>
+  </div>
+</section>
+
+<div class="hero-dock">
+  <div class="container">
+    <form class="search-panel" action="doctors.html" role="search" aria-labelledby="search-title" data-validate novalidate data-search-form data-no-reset>
+      <p class="search-panel-title" id="search-title">{{icon search 22}}Find a doctor, department or service</p>
+      <div class="search-row">
+        <div class="field"><label class="sr-only" for="hs-q">Doctor name, speciality or condition</label><input id="hs-q" name="q" type="search" placeholder="Try a doctor name, knee pain or cardiology" autocomplete="off"></div>
+        <div class="field"><label class="sr-only" for="hs-dept">Department</label><select id="hs-dept" name="dept"><option value="">All departments</option>{{dept_options}}</select></div>
+        <button class="btn btn-primary" type="submit">{{icon search 18}}Search</button>
+      </div>
+      <p class="search-hints">Popular: <a href="doctors.html?dept=cardiology">Cardiology</a><a href="doctors.html?dept=orthopaedics">Orthopaedics</a><a href="doctors.html?dept=paediatrics">Paediatrics</a><a href="doctors.html?dept=gynaecology">Pregnancy care</a></p>
+    </form>
+    <nav class="quick-bar" aria-label="Quick actions">
+      <a class="quick-tile" href="dashboard-appointments.html">{{badge calendar}}<strong>Book online</strong><span>Pick a doctor and slot in the patient portal</span></a>
+      <a class="quick-tile" href="doctors.html">{{badge stethoscope}}<strong>Find a doctor</strong><span>12 specialists with OPD days and fees</span></a>
+      <a class="quick-tile" href="home-2.html#packages">{{badge flask}}<strong>Health check-ups</strong><span>Preventive packages from ₹1,499</span></a>
+      <a class="quick-tile quick-tile--emergency" href="#emergency">{{badge ambulance red}}<strong>Emergency</strong><span>24/7 trauma care and ambulance</span></a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ FACILITIES ============ -->
+<section class="section" id="facilities" aria-labelledby="fac-title">
+  <div class="container">
+    <div class="intro-row">
+      <header class="intro">
+        <p class="eyebrow">Hospital facilities</p>
+        <h2 id="fac-title">Built for complex care, designed for comfort</h2>
+        <p>Everything a multispeciality hospital needs under one roof, so you are never sent elsewhere for a test or a second opinion.</p>
+      </header>
+      <a class="link" href="about.html">About the hospital {{icon_arrow}}</a>
+    </div>
+    <div class="cards cards--3">
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-or-800.webp" width="800" height="533" alt="A modern operating theatre with surgical lights and monitors" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">Modular operating theatres</h3>
+        <p class="card-text">14 laminar-flow theatres, including a hybrid cath-lab theatre and a dedicated 24/7 trauma theatre.</p>
+        <ul class="meta"><li>{{icon check 16}}14 theatres, 2 robotic</li></ul>
+      </article>
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-icu-800.webp" width="800" height="533" alt="An intensive care unit bed surrounded by monitoring equipment" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">Critical care units</h3>
+        <p class="card-text">Medical, cardiac, neuro and paediatric ICUs with 1:1 nursing and intensivists on site around the clock.</p>
+        <ul class="meta"><li>{{icon check 16}}96 ICU beds</li></ul>
+      </article>
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-imaging-800.webp" width="800" height="533" alt="A patient being positioned for an MRI scan" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">Imaging and radiology</h3>
+        <p class="card-text">3T MRI, 256-slice CT, PET-CT, digital X-ray and ultrasound, reported by sub-specialist radiologists.</p>
+        <ul class="meta"><li>{{icon clock 16}}Open 24/7</li></ul>
+      </article>
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-lab-800.webp" width="800" height="533" alt="A laboratory scientist working with test samples" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">Diagnostic laboratory</h3>
+        <p class="card-text">NABL-style accredited lab for blood, pathology and microbiology, with most results online the same day.</p>
+        <ul class="meta"><li>{{icon check 16}}1,500+ tests a day</li></ul>
+      </article>
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-pharmacy-800.webp" width="800" height="533" alt="A pharmacist arranging medicines on pharmacy shelves" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">24-hour pharmacy</h3>
+        <p class="card-text">In-house pharmacy with home delivery of repeat prescriptions ordered through the patient portal.</p>
+        <ul class="meta"><li>{{icon clock 16}}Open 24/7</li></ul>
+      </article>
+      <article class="card card--rows-4 facility-card">
+        <div class="card-media"><img src="images/facility-ward-800.webp" width="800" height="533" alt="A bright private patient room with a hospital bed and window" loading="lazy" decoding="async"></div>
+        <h3 class="card-title">Private and shared rooms</h3>
+        <p class="card-text">Single rooms with a companion bed, twin-sharing rooms and general wards, all with nurse call and Wi-Fi.</p>
+        <ul class="meta"><li>{{icon check 16}}450 beds</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MAJOR DEPARTMENTS ============ -->
+<section class="section section--tint" id="departments" aria-labelledby="dept-title">
+  <div class="container">
+    <div class="intro-row">
+      <header class="intro">
+        <p class="eyebrow">Major departments</p>
+        <h2 id="dept-title">Centres of excellence</h2>
+        <p>Specialist teams with their own OPDs, operating theatres and intensive care, working together on every complex case.</p>
+      </header>
+      <a class="link" href="departments.html">All 12 departments {{icon_arrow}}</a>
+    </div>
+    <div class="cards cards--4">
+{{dept_tiles cardiology,neurology,orthopaedics,oncology,paediatrics,gynaecology,gastroenterology,emergency major}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS BAND ============ -->
+<section class="section band" id="why" aria-labelledby="why-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Why Northcrest</p>
+      <h2 id="why-title">Trusted by families across north Bengaluru</h2>
+      <p>Numbers from our 2025 annual quality report.</p>
+    </header>
+    <div class="stat-band">
+      <div><strong>450</strong><span>beds, including 96 ICU beds</span></div>
+      <div><strong>120+</strong><span>consultants across 12 specialities</span></div>
+      <div><strong>2,40,000</strong><span>patients treated last year</span></div>
+      <div><strong>98.6%</strong><span>patients who would recommend us</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="section" id="stories" aria-labelledby="testi-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Patient stories</p>
+      <h2 id="testi-title">What our patients say</h2>
+      <p>Shared with permission by patients and families treated at Northcrest this year.</p>
+    </header>
+    <div class="testimonials">
+      <figure class="testimonial">
+        <figcaption class="t-head"><img class="t-photo" src="images/testi-1-160.webp" width="160" height="160" alt="Saraswati Gowda" loading="lazy" decoding="async"><span class="t-person"><span class="t-name">Saraswati Gowda</span><span class="t-role">Knee replacement, Orthopaedics</span></span></figcaption>
+        <div class="t-rating" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div>
+        <blockquote><p>I was walking with a frame the morning after my knee surgery. The physiotherapists came twice a day and my daughter could stay in the room with me.</p></blockquote>
+      </figure>
+      <figure class="testimonial">
+        <figcaption class="t-head"><img class="t-photo" src="images/testi-2-160.webp" width="160" height="160" alt="Rohan Mehta" loading="lazy" decoding="async"><span class="t-person"><span class="t-name">Rohan Mehta</span><span class="t-role">Chest pain, Emergency and Cardiology</span></span></figcaption>
+        <div class="t-rating" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div>
+        <blockquote><p>I reached the emergency at 2 am with chest pain. Within forty minutes the blockage was opened. The cardiology team explained every step to my wife.</p></blockquote>
+      </figure>
+      <figure class="testimonial">
+        <figcaption class="t-head"><img class="t-photo" src="images/testi-3-160.webp" width="160" height="160" alt="Divya Prakash" loading="lazy" decoding="async"><span class="t-person"><span class="t-name">Divya Prakash</span><span class="t-role">Pregnancy care, Obstetrics</span></span></figcaption>
+        <div class="t-rating" role="img" aria-label="Rated 5 out of 5"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div>
+        <blockquote><p>From the first scan to my daughter&#8217;s birth, the same team looked after me. Booking scans and seeing reports in the portal saved so many trips.</p></blockquote>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EMERGENCY ============ -->
+<section class="section section--tight section--line" id="emergency" aria-labelledby="em-title">
+  <div class="container">
+    <div class="emergency-band">
+      <div class="em-main">
+        <p class="em-live"><span class="em-dot" aria-hidden="true"></span>Emergency and trauma, 24/7</p>
+        <h2 id="em-title">In an emergency, every minute counts</h2>
+        <p class="em-lead">Our 30-bed emergency department, cath lab and trauma theatre are open day and night. Advanced life-support ambulances cover north Bengaluru.</p>
+        <ul class="em-facts">
+          <li>{{icon check 16}}30-bed emergency department</li>
+          <li>{{icon check 16}}24/7 cath lab</li>
+          <li>{{icon check 16}}Trauma theatre</li>
+          <li>{{icon check 16}}ALS ambulances</li>
+        </ul>
+      </div>
+      <div class="em-actions">
+        <span class="em-label">Emergency desk</span>
+        <a class="em-number" href="tel:+918047181000">+91 80 4718 1000</a>
+        <a class="btn btn-emergency em-call" href="tel:108">{{icon ambulance 18}}Call ambulance 108</a>
+        <span class="em-note">Free, government ambulance line</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-band">
+      <p class="eyebrow">Patient portal</p>
+      <h2 id="cta-title">Your appointments, reports and bills in one place</h2>
+      <p>Create a free account to book doctors, download lab reports, request prescription refills and pay hospital bills online.</p>
+      <div class="hero-ctas"><a class="btn btn-primary btn-lg" href="signup.html">Create an account</a><a class="btn btn-secondary btn-lg" href="dashboard.html">Open the dashboard</a></div>
+    </div>
+  </div>
+</section>

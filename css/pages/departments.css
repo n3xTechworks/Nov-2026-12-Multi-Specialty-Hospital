@@ -1,0 +1,37 @@
+/* Departments: filter, 12 tiles, finder, steps, OPD table */
+.dept-filter { display: flex; flex-direction: column; align-items: center; gap: 12px; margin-bottom: var(--s5); }
+.dept-filter .chips { justify-content: center; }
+.dept-filter .result-count { margin: 0; }
+.empty-depts { margin-top: var(--s4); }
+
+.find-panel { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s5); align-items: center;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(20px, 4vw, 36px); }
+.find-text { display: flex; flex-direction: column; gap: var(--s2); }
+.find-text > p:not(.eyebrow) { color: var(--muted); }
+/* equal boxes: every row the same height (grid-auto-rows: 1fr) and each link fills its cell */
+.dept-find-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 1fr; gap: 10px; }
+.dept-find-list > li { display: flex; min-width: 0; }
+@media (max-width: 479.98px) { .dept-find-list { grid-template-columns: minmax(0, 1fr); gap: 8px; } }
+.dept-find { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; min-height: 52px; padding: 8px 12px; border: 1px solid var(--line); border-radius: var(--ctl-r);
+  color: var(--ink); font-weight: 600; font-size: var(--fs-small); text-decoration: none; transition: border-color .2s, background-color .2s; }
+.dept-find:hover { border-color: var(--accent); background: var(--primary-soft); }
+.dept-find svg { color: var(--primary-ink); flex: none; }
+.dept-find-count { flex: none; margin-inline-start: auto; min-width: 24px; padding: 1px 7px; border-radius: 6px; background: var(--primary-soft); color: var(--primary-ink); font-size: var(--fs-xs); text-align: center; }
+@media (min-width: 768px) { .dept-find-list { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+/* 1024-1279: the list column is narrow beside the text, so 2 per row keeps every label on one line */
+@media (min-width: 1024px) and (max-width: 1279.98px) { .dept-find-list { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { .find-panel { grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: var(--s7); } }
+
+.opd-wrap { overflow-x: auto; background: var(--card); }
+.opd-table { min-width: 640px; }
+.opd-table td:last-child, .opd-table th:last-child { text-align: center; }
+@media (max-width: 767.98px) {
+  .opd-table { min-width: 0; }
+  .opd-table thead { display: none; }
+  .opd-table tr { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; padding: 12px 14px; border-bottom: 1px solid var(--line); }
+  .opd-table th, .opd-table td { padding: 0; border: 0; }
+  .opd-table th[scope="row"] { grid-column: 1; }
+  .opd-table td:nth-of-type(1), .opd-table td:nth-of-type(2) { grid-column: 1; color: var(--muted); font-size: var(--fs-xs); }
+  .opd-table td:nth-of-type(3) { grid-column: 2; grid-row: 1; }
+  .opd-table td:nth-of-type(3)::after { content: " consultants"; color: var(--muted); font-size: var(--fs-xs); }
+}

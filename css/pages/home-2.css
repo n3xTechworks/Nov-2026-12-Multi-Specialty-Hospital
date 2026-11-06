@@ -1,0 +1,53 @@
+/* Home 2: planned visits (timings, journey, packages, insurance, emergency info) */
+.hero-home2 { min-height: clamp(500px, 70vh, 640px); padding-block: 72px 88px; }
+
+/* timings at a glance: text + tabbed table, no dock (different from Home 1) */
+.glance { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s6); align-items: start;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-xl); padding: clamp(20px, 4vw, 40px); }
+.glance-section { padding-top: clamp(32px, 5vw, 56px); }
+.glance-intro { display: flex; flex-direction: column; gap: var(--s3); }
+.glance-intro > p:not(.eyebrow) { color: var(--muted); }
+.glance-list { margin-top: var(--s2); }
+.glance-list a { color: var(--primary-ink); font-weight: 600; }
+.glance-tabs .tabs { margin-bottom: var(--s4); }
+.glance-tabs .timing-table { min-width: 0; }
+.glance-tabs .table-wrap { overflow-x: auto; }
+@media (min-width: 1024px) { .glance { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--s7); } }
+@media (max-width: 479.98px) { .glance-tabs .timing-table th, .glance-tabs .timing-table td { padding: 10px 10px; } }
+
+/* journey: ordered list of cards */
+.journey { list-style: none; padding: 0; margin: 0; }
+.journey-card .card-kicker span:not(.badge) { display: inline-flex; align-items: center; gap: 6px; }
+.journey-card .card-media img { object-position: center 35%; }
+
+/* packages */
+.pkg-card > .icon-badge { margin-top: var(--pad); }
+.pkg-list { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: var(--fs-small); }
+.pkg-card > .btn { justify-self: stretch; margin-top: 14px; }
+.pkg-card .card-kicker span:not(.badge) { display: inline-flex; align-items: center; gap: 6px; }
+
+/* insurance tiles (text only, no logos) */
+.ins-grid { list-style: none; padding: 0; margin: 0 0 var(--s6); display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ins-tile { display: flex; flex-direction: column; justify-content: center; gap: 2px; min-height: 84px; padding: 14px 18px;
+  background: var(--card); border: 1px solid var(--line); border-radius: var(--r-md); border-inline-start: 3px solid var(--accent); }
+.ins-tile strong { font-family: var(--f-head); font-weight: 700; font-size: 1.0625rem; line-height: 1.25; }
+.ins-tile span { font-size: var(--fs-xs); color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+@media (min-width: 768px) { .ins-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+
+/* testimonials: grey star for a 4/5 rating */
+.t-star-off { display: inline-flex; opacity: .3; }
+
+/* emergency info inside the navy band */
+.em-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.em-tile { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--r-md);
+  background: var(--band-card); border: 1px solid var(--band-line); color: var(--band-ink); text-decoration: none; transition: border-color .2s, background-color .2s; }
+.em-tile:hover { border-color: var(--band-accent); background: rgba(255, 255, 255, .12); }
+.em-tile .icon-badge--red { background: var(--emergency); color: #fff; border-color: transparent; }
+.em-tile-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.em-tile-text strong { font-family: var(--f-head); font-size: 1.375rem; font-weight: 800; line-height: 1.2; color: #fff; }
+.em-tile-text span { font-size: var(--fs-small); color: var(--band-muted); }
+@media (min-width: 900px) { .em-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.em-signs { list-style: none; padding: 0; margin: var(--s5) 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.em-signs li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--ctl-r);
+  border: 1px solid var(--band-line); color: var(--band-ink); font-size: var(--fs-small); }
+.em-signs svg { color: var(--band-accent); flex: none; }

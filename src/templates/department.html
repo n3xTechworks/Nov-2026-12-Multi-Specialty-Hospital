@@ -1,0 +1,74 @@
+---
+nav: departments
+css: department
+js: department
+---
+<!-- Department detail template. A page is just front matter: template: department + department: <slug> (data/departments.json, "detail": true). -->
+<nav class="dept-jump" aria-label="On this page">
+  <div class="container"><ul>
+    <li><a href="#overview">Overview</a></li><li><a href="#conditions">Conditions</a></li><li><a href="#procedures">Procedures</a></li><li><a href="#technology">Technology</a></li><li><a href="#doctors">Doctors</a></li><li><a href="#faq">FAQ</a></li>
+  </ul></div>
+</nav>
+<section class="section" id="overview" aria-labelledby="ov-title">
+  <div class="container">
+    <div class="split split--detail">
+      <div class="split-body">
+        <p class="eyebrow">Overview</p>
+        <h2 id="ov-title">About {{d.name}} at Northcrest</h2>
+        <p>{{d.overview}}</p>
+        <p>{{d.summary}}</p>
+        <div class="split-actions"><a class="btn btn-primary" href="contact.html?dept={{d.slug}}#appointment">Book appointment</a><a class="btn btn-secondary" href="doctors.html?dept={{d.slug}}">Find a {{d.short}} doctor</a></div>
+      </div>
+      {{d_facts}}
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="conditions" aria-labelledby="cond-title">
+  <div class="container">
+    <header class="intro intro--center"><p class="eyebrow">Conditions treated</p><h2 id="cond-title">What we diagnose and treat</h2><p>Common conditions our {{d.short}} team sees every week. Not sure where to start? Our helpline can guide you.</p></header>
+    {{d_conditions}}
+  </div>
+</section>
+
+<section class="section" id="procedures" aria-labelledby="proc-title">
+  <div class="container">
+    <header class="intro intro--center"><p class="eyebrow">Procedures</p><h2 id="proc-title">Treatments and procedures</h2><p>Each plan is explained in writing, with costs and recovery time, before anything starts.</p></header>
+    {{d_procedures}}
+  </div>
+</section>
+
+<section class="section section--blue" id="technology" aria-labelledby="tech-title">
+  <div class="container">
+    <header class="intro intro--center"><p class="eyebrow">Technology</p><h2 id="tech-title">Equipment that makes a difference</h2><p>Modern tools chosen for safer procedures, sharper diagnosis and faster recovery.</p></header>
+    {{d_technology}}
+  </div>
+</section>
+
+<section class="section" id="doctors" aria-labelledby="docs-title">
+  <div class="container container-narrow">
+    <header class="intro intro--center"><p class="eyebrow">Our specialists</p><h2 id="docs-title">Doctors in this department</h2><p>Open a profile for qualifications, languages and OPD days, or book straight from the doctors page.</p></header>
+    {{doctor_list}}
+    <div class="section-actions"><a class="link" href="doctors.html">See all Northcrest doctors <svg class="flip" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</section>
+
+<section class="section section--tint" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="intro intro--center"><p class="eyebrow">Questions</p><h2 id="faq-title">Frequently asked questions</h2><p>Ask anything else at your consultation or call the helpline.</p></header>
+    {{d_faq}}
+  </div>
+</section>
+
+<section class="section" id="other" aria-labelledby="other-title">
+  <div class="container">
+    <header class="intro intro--center"><p class="eyebrow">Explore</p><h2 id="other-title">Other centres of excellence</h2><p>Many patients see more than one specialist. Your records follow you across departments.</p></header>
+    {{dept_links detail except-current}}
+  </div>
+</section>
+
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-band"><p class="eyebrow">Next step</p><h2 id="cta-title">Talk to a {{d.short}} specialist</h2><p>Request an OPD appointment online. Our team confirms your slot by phone within 2 working hours.</p><div class="hero-ctas"><a class="btn btn-primary btn-lg" href="contact.html?dept={{d.slug}}#appointment">Request appointment</a><a class="btn btn-secondary btn-lg" href="departments.html">All departments</a></div></div>
+  </div>
+</section>

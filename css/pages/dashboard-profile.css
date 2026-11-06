@@ -1,0 +1,23 @@
+/* dashboard-profile */
+@import url("dash-common.css");
+.profile-hero { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.prof-photo { width: 88px; height: 88px; border-radius: 50%; object-fit: cover; object-position: center 25%; border: 3px solid var(--surface); box-shadow: 0 0 0 2px var(--primary); flex: none; }
+.prof-id { flex: 1 1 220px; min-width: 0; display: grid; gap: 4px; }
+.prof-id h2 { font-size: 1.5rem; }
+.prof-id p { color: var(--muted); font-size: var(--fs-small); }
+.prof-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 4px; }
+.prof-acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.profile-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (min-width: 1180px) { .profile-grid { grid-template-columns: minmax(0, 1fr) 340px; } }
+.profile-main, .profile-side { display: grid; gap: 20px; min-width: 0; }
+.form-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: var(--s2); }
+.setting-list { display: grid; }
+.setting-list > li { padding-block: 12px; border-top: 1px solid var(--line); }
+.setting-list > li:first-child { border-top: 0; padding-top: 0; }
+.setting-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.setting-row > div { display: grid; min-width: 0; flex: 1 1 150px; }
+.setting-row span { color: var(--muted); font-size: var(--fs-xs); }
+.danger-zone { border-color: color-mix(in srgb, var(--error) 35%, var(--line)); }
+.danger-zone p { color: var(--muted); font-size: var(--fs-small); margin-bottom: var(--s4); }
+#md-bmi { background: var(--primary-soft); }
+.badge--warn { background: var(--warn-bg); color: var(--warn); }

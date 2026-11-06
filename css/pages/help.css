@@ -1,0 +1,16 @@
+/* help centre: search in the title band, topic links, grouped centred FAQ */
+.help-search { position: relative; width: min(100%, 560px); margin-top: var(--s3); }
+.help-search svg { position: absolute; inset-inline-start: 18px; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; fill: none; stroke: var(--primary-ink); stroke-width: 2; stroke-linecap: round; pointer-events: none; }
+.help-search input {
+  width: 100%; height: 56px; padding-inline: 50px 20px; border-radius: var(--r-md); border: 1px solid var(--line-strong);
+  background: var(--field-bg); color: var(--ink); font-size: 1rem; box-shadow: var(--shadow);
+}
+.help-search input::placeholder { color: var(--muted); }
+.help-search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent); }
+.title-band .help-count { font-size: var(--fs-small); }
+.help-topics { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 auto var(--s6); }
+.help-topics a { display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border: 1px solid var(--line-strong); border-radius: var(--r-pill); color: var(--ink); font-weight: 600; font-size: var(--fs-small); text-decoration: none; background: var(--card); }
+.help-topics a:hover { border-color: var(--primary); color: var(--primary-ink); }
+.faq-group { scroll-margin-top: calc(var(--header-h) + 16px); }
+.help-faq mark { background: color-mix(in srgb, var(--accent) 25%, transparent); color: inherit; border-radius: 3px; }
+.cta-tel { color: inherit; font-weight: 700; }

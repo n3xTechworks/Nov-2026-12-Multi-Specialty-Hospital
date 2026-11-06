@@ -1,0 +1,33 @@
+/* signup */
+.auth-head { text-align: center; }
+.auth-form .social-login { display: grid; gap: 14px; justify-items: center; margin: 0; }
+.auth-form .social-login-row { display: flex; justify-content: center; gap: 14px; width: 100%; }
+.auth-form .divider-text { width: 100%; }
+.auth-legal { text-align: center; }
+.auth-legal--muted { margin-top: -10px; }
+.link-btn { background: none; border: 0; padding: 0; font: inherit; font-weight: 600; color: var(--primary-ink); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; border-radius: 4px; }
+.link-btn:hover { color: var(--primary-hover); }
+.link-btn[disabled] { color: var(--muted); cursor: default; text-decoration: none; }
+.btn.is-busy, .btn-social.is-busy { opacity: .75; pointer-events: none; }
+.btn-social[disabled] { opacity: .6; cursor: progress; }
+.auth-form, .auth-form .form { gap: var(--s4); }
+.auth-form .sub, .sub-lead, .auth-lead { color: var(--muted); font-size: var(--fs-small); }
+.form-error svg { width: 20px; height: 20px; flex: none; }
+.pw-meter { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-top: 4px; }
+.pw-meter span { height: 6px; border-radius: 3px; background: var(--line-strong); transition: background-color .2s; }
+.pw-meter[data-level="1"] span:nth-child(-n+1) { background: var(--error); }
+.pw-meter[data-level="2"] span:nth-child(-n+2) { background: var(--warn); }
+.pw-meter[data-level="3"] span:nth-child(-n+3) { background: var(--primary); }
+.pw-meter[data-level="4"] span { background: var(--ok); }
+.sub-lead strong { color: var(--ink); overflow-wrap: anywhere; }
+.auth-steps { margin-bottom: 0; }
+.auth-steps li { min-width: 0; }
+.auth-steps li span { white-space: nowrap; }
+.code-field { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; min-width: 0; }
+.code-row { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; direction: ltr; }
+.code-input { width: 100%; height: 54px; text-align: center; font-family: var(--f-head); font-size: 1.5rem; font-weight: 700; border: 1px solid var(--line-strong); border-radius: var(--ctl-r); background: var(--surface); color: var(--ink); padding: 0; }
+.code-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 28%, transparent); }
+.code-input[aria-invalid="true"] { border-color: var(--error); background: var(--error-bg); }
+.pref-switches { display: grid; gap: 14px; }
+.auth-form select { width: 100%; }
+.auth-form .chips { gap: 8px; }

@@ -1,0 +1,120 @@
+---
+layout: app
+title: Appointments | Northcrest patient portal
+description: Book a consultation with a Northcrest specialist, in person or by video, and manage upcoming and past visits.
+app_nav: appointments
+app_title: Appointments
+css: dashboard-appointments
+js: dashboard-appointments
+---
+<div class="page-head"><div><h1>Appointments</h1><p>Book a specialist in five quick steps. Free rescheduling up to 2 hours before your slot.</p></div>
+  <div class="page-head-actions"><a class="btn btn-secondary" href="#upcoming">Upcoming <span class="badge badge--solid" id="upCountTop">0</span></a></div></div>
+
+<div class="bk-layout" id="book">
+  <div class="bk-main">
+    <section class="widget" aria-labelledby="s1-title">
+      <div class="w-head"><h2 id="s1-title"><span class="step-n" aria-hidden="true">1</span>Department</h2></div>
+      <div class="dept-grid" role="radiogroup" aria-labelledby="s1-title" id="deptGrid"></div>
+    </section>
+
+    <section class="widget" aria-labelledby="s2-title" id="stepDoctor">
+      <div class="w-head"><h2 id="s2-title"><span class="step-n" aria-hidden="true">2</span>Doctor</h2><a class="link" href="doctors.html">Read doctor profiles</a></div>
+      <div class="doc-grid" role="radiogroup" aria-labelledby="s2-title" id="docGrid"></div>
+    </section>
+
+    <section class="widget" aria-labelledby="s3-title" id="stepDate">
+      <div class="w-head"><h2 id="s3-title"><span class="step-n" aria-hidden="true">3</span>Date</h2>
+        <div class="week-nav"><button class="btn btn-secondary btn-sm btn-icon" type="button" id="wkPrev" aria-label="Previous week"><svg class="flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><span id="wkLabel" aria-live="polite">Next 7 days</span><button class="btn btn-secondary btn-sm btn-icon" type="button" id="wkNext" aria-label="Next week"><svg class="flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div>
+      </div>
+      <div class="day-pills" role="group" aria-labelledby="s3-title" id="dayPills"></div>
+      <p class="field-hint" id="opdHint">Choose a doctor to see their OPD days.</p>
+    </section>
+
+    <section class="widget" aria-labelledby="s4-title" id="stepSlot">
+      <div class="w-head"><h2 id="s4-title"><span class="step-n" aria-hidden="true">4</span>Time slot</h2></div>
+      <div id="slotBox" aria-live="polite"></div>
+    </section>
+
+    <section class="widget" aria-labelledby="s5-title" id="stepType">
+      <div class="w-head"><h2 id="s5-title"><span class="step-n" aria-hidden="true">5</span>Visit type</h2></div>
+      <div class="type-grid" role="radiogroup" aria-labelledby="s5-title" id="typeGrid">
+        <label class="option-card"><input type="radio" name="vtype" value="in-person" checked><span class="oc-body"><strong>In person</strong><span>OPD, Block A. Bring your ID and old reports.</span></span></label>
+        <label class="option-card"><input type="radio" name="vtype" value="video"><span class="oc-body"><strong>Video consultation</strong><span>Join from your phone. Link sent by SMS. 10% lower fee.</span></span></label>
+      </div>
+      <div class="field bk-reason"><label for="bkReason">Reason for visit (optional)</label><input id="bkReason" type="text" maxlength="80" placeholder="For example: follow-up, chest pain, knee pain"></div>
+    </section>
+  </div>
+
+  <aside class="bk-side" aria-labelledby="sum-title">
+    <section class="widget widget--blue sum-card">
+      <h2 id="sum-title">Your booking</h2>
+      <dl class="summary-list" id="sumList"></dl>
+      <p class="field-error" id="bookError" role="alert"></p>
+      <button class="btn btn-primary btn-block" type="button" id="reviewBtn">Review and confirm</button>
+      <button class="btn btn-secondary btn-block" type="button" id="clearBtn">Start again</button>
+    </section>
+  </aside>
+</div>
+
+<section class="widget" aria-labelledby="up-title" id="upcoming">
+  <div class="w-head"><h2 id="up-title">Upcoming appointments</h2><span class="badge" id="upCount">0</span></div>
+  <div class="up-list" id="upList"></div>
+</section>
+
+<section class="widget" aria-labelledby="past-title" id="past">
+  <div class="w-head"><h2 id="past-title">Past visits</h2>
+    <div class="seg" role="group" aria-label="Filter past visits" id="pastSeg"><button type="button" data-f="all" aria-pressed="true">All</button><button type="button" data-f="completed" aria-pressed="false">Completed</button><button type="button" data-f="cancelled" aria-pressed="false">Cancelled</button></div></div>
+  <div class="table-wrap"><table class="table table--compact past-table"><thead><tr><th scope="col">Date</th><th scope="col">Doctor</th><th scope="col">Visit</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="pastRows"></tbody></table></div>
+</section>
+
+<div class="modal" id="m-confirm" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-confirm-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-confirm-title">Confirm your appointment</h2>
+    <p>Please check the details. You will get an SMS and email confirmation.</p>
+    <div class="modal-body"><dl class="summary-list" id="cfList"></dl>
+      <label class="check"><input type="checkbox" id="cfAgree"> <span>I will arrive 15 minutes early (or join the video link on time) and understand the fee is payable at the visit.</span></label>
+      <p class="field-error" id="cfError" role="alert"></p></div>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Go back</button><button class="btn btn-primary" type="button" id="cfBtn">Confirm appointment</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-resched" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog--wide" role="dialog" aria-modal="true" aria-labelledby="m-resched-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-resched-title">Reschedule appointment</h2>
+    <p id="rsCurrent">Currently booked.</p>
+    <div class="modal-body">
+      <div class="w-head rs-head"><span class="label" id="rsDayLbl">New date</span><div class="week-nav"><button class="btn btn-secondary btn-sm btn-icon" type="button" id="rsPrev" aria-label="Previous week"><svg class="flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button><span id="rsWk">Next 7 days</span><button class="btn btn-secondary btn-sm btn-icon" type="button" id="rsNext" aria-label="Next week"><svg class="flip" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button></div></div>
+      <div class="day-pills day-pills--sm" role="group" aria-labelledby="rsDayLbl" id="rsDays"></div>
+      <span class="label">New time</span>
+      <div id="rsTimes" aria-live="polite"></div>
+    </div>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Keep current time</button><button class="btn btn-primary" type="button" id="rsConfirm" disabled>Pick a date and time</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-cancel" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-cancel-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-cancel-title">Cancel this appointment?</h2>
+    <p id="cnText">The slot will be released to another patient.</p>
+    <div class="modal-body"><div class="field"><label for="cnReason">Reason</label><select id="cnReason"><option value="">Choose a reason</option><option>Feeling better</option><option>I cannot make this time</option><option>I booked the wrong doctor</option><option>Other</option></select><p class="field-error" id="cnError" role="alert"></p></div></div>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Keep appointment</button><button class="btn btn-danger" type="button" id="cnConfirm">Cancel appointment</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-notes" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-notes-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-notes-title">Visit summary</h2>
+    <p id="ntMeta"></p>
+    <div class="modal-body"><dl class="summary-list" id="ntList"></dl></div>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" id="ntDownload">Download summary</button><a class="btn btn-primary" href="#book" id="ntFollow">Book follow-up</a></div>
+  </div>
+</div>
+<script defer src="js/pages/dashboard-data.js"></script>

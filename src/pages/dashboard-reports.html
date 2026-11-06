@@ -1,0 +1,70 @@
+---
+layout: app
+title: Medical reports | Northcrest patient portal
+description: Your Northcrest lab results, radiology reports and discharge summaries, with flagged values and trends.
+app_nav: reports
+app_title: Medical reports
+css: dashboard-reports
+js: dashboard-reports
+---
+<div class="page-head"><div><h1>Medical reports</h1><p>Lab results, scans and discharge summaries from every Northcrest visit. Values outside the normal range are flagged.</p></div>
+  <div class="page-head-actions"><button class="btn btn-secondary" type="button" id="dlAll">Download all (ZIP)</button></div></div>
+
+<div class="stat-grid rep-stats" id="repStats"></div>
+
+<section class="widget" aria-labelledby="rl-title">
+  <div class="w-head"><h2 id="rl-title">All reports</h2><p class="result-note" id="repNote" aria-live="polite"></p></div>
+  <div class="toolbar">
+    <div class="seg" role="group" aria-label="Report type" id="typeSeg"><button type="button" data-t="all" aria-pressed="true">All</button><button type="button" data-t="lab" aria-pressed="false">Lab</button><button type="button" data-t="radiology" aria-pressed="false">Radiology</button><button type="button" data-t="discharge" aria-pressed="false">Discharge</button></div>
+    <div class="toolbar-fields">
+      <div class="field"><label class="sr-only" for="repSearch">Search reports</label><input id="repSearch" type="search" placeholder="Search by test or doctor"></div>
+      <div class="field"><label class="sr-only" for="repPeriod">Period</label><select id="repPeriod"><option value="0">Any time</option><option value="30">Last 30 days</option><option value="90">Last 3 months</option><option value="180">Last 6 months</option></select></div>
+      <label class="check flag-only"><input type="checkbox" id="repFlag"> <span>Flagged only</span></label>
+    </div>
+  </div>
+  <div class="table-wrap"><table class="table table--compact rep-table"><thead><tr><th scope="col">Report</th><th scope="col">Date</th><th scope="col">Ordered by</th><th scope="col">Result</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="repRows"></tbody></table></div>
+</section>
+
+<div class="modal" id="m-report" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog modal-dialog--wide rv-dialog" role="dialog" aria-modal="true" aria-labelledby="m-report-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <p class="rv-kicker" id="rvKicker">Lab test</p>
+    <h2 id="m-report-title">Report</h2>
+    <p id="rvMeta"></p>
+    <div class="modal-body">
+      <div class="table-wrap"><table class="table table--compact rv-table"><thead><tr><th scope="col">Test</th><th scope="col">Result</th><th scope="col">Normal range</th><th scope="col">Flag</th></tr></thead><tbody id="rvRows"></tbody></table></div>
+      <div class="rv-trend" id="rvTrendBox"><h3 class="rv-h">Trend</h3><div id="rvTrend" class="mini-chart"></div></div>
+      <div class="rv-note"><h3 class="rv-h">Doctor's comment</h3><p id="rvComment"></p></div>
+    </div>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" id="rvShare">Share</button><button class="btn btn-secondary" type="button" id="rvAsk">Ask the doctor</button><button class="btn btn-primary" type="button" id="rvDownload">Download PDF</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-share" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-share-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-share-title">Share report</h2>
+    <p id="shText">Send a secure link that expires in 7 days.</p>
+    <form class="form" data-validate novalidate id="shareForm">
+      <div class="field"><label for="sh-email">Recipient email</label><input id="sh-email" name="email" type="email" placeholder="doctor@example.com" required></div>
+      <div class="field"><label for="sh-note">Message (optional)</label><textarea id="sh-note" name="note" rows="3" placeholder="For example: second opinion before my next visit"></textarea></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" id="shCopy">Copy secure link</button><button class="btn btn-primary" type="submit">Send link</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-ask" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-ask-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-ask-title">Ask about this report</h2>
+    <p id="askText">Your doctor usually replies within one working day.</p>
+    <form class="form" data-validate novalidate id="askForm">
+      <div class="field"><label for="ask-msg">Your question</label><textarea id="ask-msg" name="message" rows="4" minlength="10" placeholder="For example: is my LDL low enough to stop the statin?" required></textarea></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit">Send question</button></div>
+    </form>
+  </div>
+</div>
+<script defer src="js/pages/dashboard-data.js"></script>

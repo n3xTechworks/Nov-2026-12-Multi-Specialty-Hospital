@@ -1,0 +1,83 @@
+---
+title: Departments | Northcrest Multispeciality Hospital
+description: 12 specialities at Northcrest Multispeciality Hospital, Bengaluru: cardiology, neurology, orthopaedics, oncology, paediatrics, obstetrics and more. Filter by category.
+nav: departments
+hero: hero-departments
+hero_alt: A surgical team at work in a modern operating theatre
+crumbs: Departments
+eyebrow: Specialities
+h1: 12 departments, one care team
+lead: Find the right specialist, from heart and brain care to children's health and 24/7 emergency.
+---
+<!-- ============ ALL DEPARTMENTS ============ -->
+<section class="section" id="all" aria-labelledby="all-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Our specialities</p>
+      <h2 id="all-title">Browse departments by category</h2>
+      <p>Six centres of excellence have their own detail pages. For the others, request an OPD appointment and we will match you with a consultant.</p>
+    </header>
+    <div class="dept-filter">
+      {{dept_chips #deptGrid}}
+      <p class="result-count" data-filter-count data-template="Showing {n} of 12 departments" aria-live="polite">Showing 12 of 12 departments</p>
+    </div>
+    <div class="cards cards--4" id="deptGrid">
+{{dept_tiles all}}
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIND A DOCTOR BY DEPARTMENT ============ -->
+<section class="section section--tint section--tight" id="find" aria-labelledby="find-title">
+  <div class="container">
+    <div class="find-panel">
+      <div class="find-text">
+        <p class="eyebrow">Find a specialist</p>
+        <h2 id="find-title">See the doctors in a department</h2>
+        <p>Open the doctors page already filtered to the speciality you need, with OPD days, languages and fees.</p>
+      </div>
+      <ul class="dept-find-list" aria-label="Doctors by department"><li><a class="dept-find" href="doctors.html?dept=cardiology">{{icon stethoscope 16}}Heart care <span class="dept-find-count">2</span></a></li><li><a class="dept-find" href="doctors.html?dept=neurology">{{icon stethoscope 16}}Brain and spine <span class="dept-find-count">1</span></a></li><li><a class="dept-find" href="doctors.html?dept=orthopaedics">{{icon stethoscope 16}}Bones and joints <span class="dept-find-count">2</span></a></li><li><a class="dept-find" href="doctors.html?dept=oncology">{{icon stethoscope 16}}Cancer care <span class="dept-find-count">1</span></a></li><li><a class="dept-find" href="doctors.html?dept=paediatrics">{{icon stethoscope 16}}Child health <span class="dept-find-count">2</span></a></li><li><a class="dept-find" href="doctors.html?dept=gynaecology">{{icon stethoscope 16}}Women&#x27;s health <span class="dept-find-count">2</span></a></li><li><a class="dept-find" href="doctors.html?dept=gastroenterology">{{icon stethoscope 16}}Digestive health <span class="dept-find-count">1</span></a></li><li><a class="dept-find" href="doctors.html?dept=pulmonology">{{icon stethoscope 16}}Lungs and breathing <span class="dept-find-count">1</span></a></li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO CHOOSE ============ -->
+<section class="section" id="choose" aria-labelledby="choose-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Not sure where to start?</p>
+      <h2 id="choose-title">Three ways to reach the right specialist</h2>
+      <p>You do not need a referral letter. If your symptoms span several specialities, our coordinators arrange one combined visit.</p>
+    </header>
+    <div class="steps">
+      <div class="step"><span class="badge">Option 1</span><h3>Start with a physician</h3><p>A general physician OPD runs every day. They examine you and refer you to the right department the same morning.</p></div>
+      <div class="step"><span class="badge">Option 2</span><h3>Call the helpline</h3><p>Describe your symptoms to a nurse on +91 80 4718 2200 between 7:00 and 22:00 and book a suitable doctor.</p></div>
+      <div class="step"><span class="badge">Option 3</span><h3>Book online</h3><p>Pick a department and doctor in the patient portal, choose a slot and get an SMS with your token number.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OPD TIMINGS ============ -->
+<section class="section section--blue" id="timings" aria-labelledby="opd-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">OPD timings and locations</p>
+      <h2 id="opd-title">Where and when each department sees patients</h2>
+      <p>Block A faces the Outer Ring Road entrance. Block B is linked on every floor by a covered bridge.</p>
+    </header>
+    <div class="table-wrap opd-wrap"><table class="timing-table opd-table"><thead><tr><th scope="col">Department</th><th scope="col">OPD hours</th><th scope="col">Location</th><th scope="col">Consultants</th></tr></thead>
+      <tbody><tr><th scope="row">Cardiology</th><td>Mon to Sat, 8:00 to 20:00</td><td>Block A, Level 2</td><td>9</td></tr><tr><th scope="row">Neurology &amp; Neurosurgery</th><td>Mon to Sat, 9:00 to 18:00</td><td>Block B, Level 3</td><td>7</td></tr><tr><th scope="row">Orthopaedics</th><td>Mon to Sat, 9:00 to 19:00</td><td>Block C, Level 1</td><td>8</td></tr><tr><th scope="row">Oncology</th><td>Mon to Sat, 9:00 to 17:00</td><td>Block D, Level 2</td><td>6</td></tr><tr><th scope="row">Paediatrics &amp; Neonatology</th><td>Mon to Sun, 8:00 to 21:00</td><td>Block E, Level 1</td><td>8</td></tr><tr><th scope="row">Obstetrics &amp; Gynaecology</th><td>Mon to Sat, 9:00 to 19:00</td><td>Block E, Level 2</td><td>7</td></tr><tr><th scope="row">Gastroenterology</th><td>Mon to Sat, 9:00 to 18:00</td><td>Block B, Level 1</td><td>6</td></tr><tr><th scope="row">Pulmonology</th><td>Mon to Sat, 9:00 to 17:00</td><td>Block B, Level 2</td><td>5</td></tr><tr><th scope="row">Nephrology &amp; Urology</th><td>Mon to Sat, 8:00 to 18:00</td><td>Block A, Level 3</td><td>6</td></tr><tr><th scope="row">ENT</th><td>Mon to Sat, 9:00 to 17:00</td><td>Block C, Level 2</td><td>4</td></tr><tr><th scope="row">Dermatology</th><td>Mon to Sat, 10:00 to 19:00</td><td>Block C, Level 2</td><td>4</td></tr><tr><th scope="row">Emergency &amp; Trauma</th><td>Open 24/7, 365 days</td><td>Ground floor, Block A</td><td>12</td></tr></tbody></table></div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="section section--tight" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta-band">
+      <p class="eyebrow">Book a consultation</p>
+      <h2 id="cta-title">Tell us what you need, we will find the specialist</h2>
+      <p>Send an appointment request and our team confirms your slot by phone within 2 working hours.</p>
+      <div class="hero-ctas"><a class="btn btn-primary btn-lg" href="contact.html#appointment">Request appointment</a><a class="btn btn-secondary btn-lg" href="doctors.html">Browse all doctors</a></div>
+    </div>
+  </div>
+</section>

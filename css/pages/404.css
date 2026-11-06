@@ -1,0 +1,8 @@
+/* 404: large code, doctor search, two way-back links */
+.nf-code { font-family: var(--f-head); font-weight: 800; font-size: clamp(4.5rem, 3rem + 7vw, 8.5rem); line-height: 1; color: var(--primary-ink); letter-spacing: -0.02em; }
+.nf-search { display: flex; gap: 10px; width: min(100%, 520px); margin-top: var(--s3); }
+.nf-search input { flex: 1; min-width: 0; height: var(--ctl-h); padding-inline: 16px; border: 1px solid var(--line-strong); border-radius: var(--ctl-r); background: var(--field-bg); color: var(--ink); font-size: 1rem; }
+.nf-search input::placeholder { color: var(--muted); }
+.nf-search input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent); }
+.nf-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: var(--s2); }
+@media (max-width: 479.98px) { .nf-actions .btn { width: 100%; } }

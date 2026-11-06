@@ -1,0 +1,22 @@
+/* department detail pages (template: department): page-specific styles */
+.split--detail { align-items: start; }
+.split-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: var(--s3); }
+
+/* in-page section links under the hero (not sticky) */
+.dept-jump { border-bottom: 1px solid var(--line); background: var(--surface); }
+.dept-jump ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 6px; padding-block: 10px; }
+.dept-jump a { display: inline-flex; align-items: center; min-height: 40px; padding-inline: 14px; border-radius: var(--ctl-r);
+  color: var(--ink); font-weight: 600; font-size: var(--fs-small); text-decoration: none; transition: background-color .2s, color .2s; }
+.dept-jump a:hover, .dept-jump a:focus-visible { background: var(--primary-soft); color: var(--primary-ink); }
+@media (max-width: 639.98px) { .dept-jump a { min-height: 36px; padding-inline: 10px; } }
+[id] { scroll-margin-top: 96px; }
+
+/* facts panel and doctor rows */
+#facts h2 { margin-bottom: var(--s3); }
+.doc-list + .section-actions { margin-top: var(--s5); }
+
+/* "other centres": 5 tiles fill one row on wide screens */
+#other .dept-links { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; list-style: none; padding: 0; margin: 0; }
+@media (min-width: 640px) { #other .dept-links { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1024px) { #other .dept-links { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (min-width: 1200px) { #other .dept-links { grid-template-columns: repeat(5, minmax(0, 1fr)); } }

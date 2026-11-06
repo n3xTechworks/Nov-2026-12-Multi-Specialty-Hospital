@@ -1,0 +1,177 @@
+---
+title: Contact and appointments | Northcrest Multispeciality Hospital
+description: Request an appointment, call our helpline or emergency line, find Northcrest on the map and read common questions.
+nav: contact
+hero: hero-contact
+hero_alt: A friendly hospital receptionist helping a visitor at the front desk
+crumbs: Contact
+eyebrow: Contact us
+h1: We are here for you, day and night
+lead: Request an appointment, reach the right department or find your way to Northcrest in Hebbal, Bengaluru.
+---
+<section class="section" id="reach" aria-labelledby="reach-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Get in touch</p>
+      <h2 id="reach-title">Talk to a real person, the same day</h2>
+      <p>Our patient help desk answers calls and emails seven days a week, and the emergency department never closes.</p>
+    </header>
+    <div class="cards cards--4 contact-cards">
+      <article class="card card--rows-4 info-card">
+        {{badge phone}}
+        <h3 class="card-title">Health helpline</h3>
+        <p class="card-text">Appointments, reports, admissions and second opinions. Every day, 7:00 to 22:00.</p>
+        <a class="link" href="tel:+918047182200"><span class="ltr-num">+91 80 4718 2200</span></a>
+      </article>
+      <article class="card card--rows-4 info-card">
+        {{badge mail}}
+        <h3 class="card-title">Write to us</h3>
+        <p class="card-text">Send referral letters, reports or questions. We reply within one working day.</p>
+        <a class="link" href="mailto:care@northcrest.example">care@northcrest.example</a>
+      </article>
+      <article class="card card--rows-4 info-card">
+        {{badge map}}
+        <h3 class="card-title">Visit the hospital</h3>
+        <p class="card-text">21 Outer Ring Road, Hebbal, Bengaluru 560024. Multi-level parking and a drop-off bay at the main entrance.</p>
+        <a class="link" href="#map">Get directions {{icon_arrow}}</a>
+      </article>
+      <article class="card card--rows-4 info-card">
+        {{badge clock}}
+        <h3 class="card-title">OPD hours</h3>
+        <p class="card-text">Outpatient clinics run Monday to Saturday, 8:00 to 20:00. Sunday clinics for paediatrics and medicine.</p>
+        <a class="link" href="doctors.html">See doctor timings {{icon_arrow}}</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="appointment" aria-labelledby="appt-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Request an appointment</p>
+      <h2 id="appt-title">Book a consultation with a specialist</h2>
+      <p>Tell us who you would like to see and when suits you. Our help desk will call to confirm a time within four working hours.</p>
+    </header>
+    <div class="appt-grid">
+      <div class="form-card">
+        <form class="form" id="apptForm" data-validate novalidate data-success-message="Thank you. Your appointment request is in. Our help desk will call you within four working hours to confirm the time.">
+          <div class="form-grid">
+            <div class="field">
+              <label for="ap-name">Patient's full name <span class="req" aria-hidden="true">*</span></label>
+              <input id="ap-name" name="name" type="text" autocomplete="name" placeholder="e.g. Kavya Srinivasan" required>
+            </div>
+            <div class="field">
+              <label for="ap-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input id="ap-email" name="email" type="email" autocomplete="email" placeholder="name@example.com" required>
+            </div>
+            <div class="field">
+              <label for="ap-phone">Mobile number <span class="req" aria-hidden="true">*</span></label>
+              <input id="ap-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="98450 12345" required>
+            </div>
+            <div class="field">
+              <label for="ap-dept">Department <span class="req" aria-hidden="true">*</span></label>
+              <select id="ap-dept" name="department" required>
+                <option value="">Choose a department</option>
+                {{dept_options}}
+              </select>
+            </div>
+            <div class="field">
+              <label for="ap-doctor">Preferred doctor <span class="field-hint">(optional)</span></label>
+              <select id="ap-doctor" name="doctor">
+                <option value="">Any available doctor</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="ap-date">Preferred date <span class="req" aria-hidden="true">*</span></label>
+              <input id="ap-date" name="date" type="date" required>
+              <span class="field-hint">Today or any later date.</span>
+            </div>
+            <div class="field field--full">
+              <label for="ap-msg">Reason for visit <span class="field-hint">(optional)</span></label>
+              <textarea id="ap-msg" name="message" rows="4" placeholder="Briefly describe your symptoms or the reason for the visit"></textarea>
+            </div>
+            <div class="field field--full">
+              <label class="check"><input type="checkbox" name="consent" required> <span>I agree that Northcrest may contact me about this request and store my details as described in the <a href="privacy.html">Privacy Policy</a>.</span></label>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button class="btn btn-primary btn-lg" type="submit">Request appointment</button>
+            <span class="field-hint">This is a request, not a confirmed booking.</span>
+          </div>
+          <p class="form-success" data-form-success role="status" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg><span data-success-text>Thank you. We will be in touch soon.</span></p>
+        </form>
+      </div>
+      <aside class="appt-side" aria-label="Before you book">
+        <div class="emergency-card" id="emergency">
+          <div class="emergency-head">{{badge ambulance red}}<span class="badge badge--emergency">Emergency 24/7</span></div>
+          <h3>Do not use this form in an emergency</h3>
+          <p>For chest pain, stroke signs, severe bleeding, breathing difficulty or a serious injury, call now or come straight to the emergency entrance on Gate 2.</p>
+          <div class="emergency-actions">
+            <a class="btn btn-emergency" href="tel:+918047181000">Call <span class="ltr-num">+91 80 4718 1000</span></a>
+            <a class="btn btn-secondary" href="tel:108">Ambulance <span class="ltr-num">108</span></a>
+          </div>
+        </div>
+        <div class="panel appt-next">
+          <h3>What happens next</h3>
+          <ol class="next-steps">
+            <li><span class="next-num" aria-hidden="true">1</span><p>A help-desk coordinator calls to confirm the doctor, date and time.</p></li>
+            <li><span class="next-num" aria-hidden="true">2</span><p>You get an SMS and email with your token number and directions.</p></li>
+            <li><span class="next-num" aria-hidden="true">3</span><p>Arrive 15 minutes early with ID, past reports and a list of medicines.</p></li>
+          </ol>
+          <p class="panel-note">Already a patient? <a href="login.html">Log in</a> to book a slot instantly from your dashboard.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="map" aria-labelledby="map-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Find us</p>
+      <h2 id="map-title">Getting to Northcrest</h2>
+      <p>We are on the Outer Ring Road in Hebbal, ten minutes from the airport road flyover. Every entrance is step-free.</p>
+    </header>
+    <div class="map-grid">
+      <ul class="where-list">
+        <li class="where">
+          <h3>Main entrance and OPD <span class="badge">Gate 1</span></h3>
+          <p>21 Outer Ring Road, Hebbal, Bengaluru 560024</p>
+          <p>Reception, outpatient clinics, pharmacy and billing</p>
+        </li>
+        <li class="where">
+          <h3>Emergency and trauma <span class="badge badge--emergency">Gate 2</span></h3>
+          <p>Open 24 hours with a dedicated ambulance bay</p>
+          <p><a href="tel:+918047181000"><span class="ltr-num">+91 80 4718 1000</span></a></p>
+        </li>
+        <li class="where">
+          <h3>By metro, bus and car</h3>
+          <p>Hebbal metro station is a 6-minute walk. BMTC buses 500D and 290 stop at the gate. Paid parking for 400 cars.</p>
+        </li>
+      </ul>
+      <div class="map-frame">
+        <iframe title="Map showing Northcrest Multispeciality Hospital in Hebbal, Bengaluru" src="https://www.google.com/maps?q=Hebbal%2C%20Bengaluru%20560024&amp;output=embed" width="800" height="480" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tint" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <header class="intro intro--center">
+      <p class="eyebrow">Questions</p>
+      <h2 id="faq-title">Frequently asked questions</h2>
+      <p>Quick answers about appointments, visits and payments. There is more in our <a href="help.html">help centre</a>.</p>
+    </header>
+    <div class="faq">
+      <div class="faq-list">
+        <details class="faq-item" name="faq-contact"><summary>Do I need a referral to see a specialist?</summary><div class="faq-answer"><p>No. You can book any Northcrest specialist directly. If you have a referral letter or reports from another doctor, please bring them to your first visit.</p></div></details>
+        <details class="faq-item" name="faq-contact"><summary>How soon will my appointment be confirmed?</summary><div class="faq-answer"><p>Our help desk calls within four working hours of your request, usually much sooner. Requests made after 20:00 are confirmed the next morning.</p></div></details>
+        <details class="faq-item" name="faq-contact"><summary>What should I bring to my appointment?</summary><div class="faq-answer"><p>Bring a photo ID, your insurance or TPA card, previous reports and scans, and a list of the medicines you take. Arrive 15 minutes early to register.</p></div></details>
+        <details class="faq-item" name="faq-contact"><summary>Do you accept health insurance and cashless treatment?</summary><div class="faq-answer"><p>Yes. We are empanelled with most major insurers and TPAs, as well as CGHS and corporate schemes. The insurance desk near Gate 1 handles pre-authorisation for planned admissions.</p></div></details>
+        <details class="faq-item" name="faq-contact"><summary>Can I have a video consultation instead?</summary><div class="faq-answer"><p>Yes, for follow-ups and second opinions. Choose video when you book from your patient dashboard, or mention it in the reason for visit and we will arrange it.</p></div></details>
+        <details class="faq-item" name="faq-contact"><summary>What are the visiting hours for inpatients?</summary><div class="faq-answer"><p>General wards welcome visitors from 11:00 to 13:00 and 17:00 to 20:00, two visitors at a time. ICU visits are limited to one relative for 15 minutes at set times.</p></div></details>
+      </div>
+    </div>
+  </div>
+</section>

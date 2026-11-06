@@ -1,0 +1,8 @@
+/* About: story, values, timeline, technology, community, accreditations, leadership */
+.split-media img { object-position: center 35%; }
+.info-card > .icon-badge { margin-top: var(--pad); }
+.leader-card { text-align: start; }
+.leader-initials { justify-self: start; margin-top: var(--pad); width: 56px; height: 56px; display: grid; place-items: center; border-radius: 10px;
+  background: var(--primary); color: var(--on-primary, #fff); font-family: var(--f-head); font-weight: 800; font-size: 1.125rem; letter-spacing: .02em; }
+.leader-card .card-sub { color: var(--primary-ink); font-weight: 600; }
+.tl-year { display: inline-block; font-family: var(--f-head); font-weight: 800; color: var(--primary-ink); }

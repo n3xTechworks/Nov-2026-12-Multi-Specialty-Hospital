@@ -1,0 +1,159 @@
+---
+layout: app
+title: Profile | Northcrest patient portal
+description: Your personal and medical details, family members, emergency contact, notifications and account security at Northcrest.
+app_nav: profile
+app_title: Profile
+css: dashboard-profile
+js: dashboard-profile
+---
+<div class="page-head"><div><h1>Profile and settings</h1><p>Keep these details current so our doctors and front desk always have the right information.</p></div></div>
+
+<section class="widget widget--blue profile-hero" aria-label="Summary">
+  <img class="prof-photo" src="images/user-1-800.webp" width="800" height="800" alt="Priya Raman" id="profPhoto">
+  <div class="prof-id"><h2 id="profName">Priya Raman</h2><p id="profMeta">Patient ID</p><div class="prof-badges" id="profBadges"></div></div>
+  <div class="prof-acts"><button class="btn btn-secondary btn-sm" type="button" id="cardBtn">Download health card</button><button class="btn btn-secondary btn-sm" type="button" id="photoBtn">Change photo</button></div>
+  <input type="file" id="photoInput" accept="image/*" hidden>
+</section>
+
+<div class="profile-grid">
+  <div class="profile-main">
+    <section class="widget" aria-labelledby="pd-title">
+      <div class="w-head"><h2 id="pd-title">Personal details</h2></div>
+      <form class="form" data-validate novalidate data-no-reset id="personalForm" data-success-message="Your personal details have been saved.">
+        <div class="form-grid">
+          <div class="field"><label for="pf-first">First name</label><input id="pf-first" name="first-name" type="text" autocomplete="given-name" placeholder="Priya" required></div>
+          <div class="field"><label for="pf-last">Last name</label><input id="pf-last" name="last-name" type="text" autocomplete="family-name" placeholder="Raman" required></div>
+          <div class="field"><label for="pf-email">Email</label><input id="pf-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="pf-phone">Mobile</label><input id="pf-phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="9845012345" required></div>
+          <div class="field"><label for="pf-dob">Date of birth</label><input id="pf-dob" name="dob" type="date" data-rule="required" min="1900-01-01" required></div>
+          <div class="field"><label for="pf-gender">Gender</label><select id="pf-gender" name="gender" required><option value="">Choose</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></div>
+          <div class="field field--full"><label for="pf-addr">Address</label><input id="pf-addr" name="address" type="text" autocomplete="street-address" placeholder="House number, street, area, city, PIN" required></div>
+        </div>
+        <div class="form-actions"><button class="btn btn-secondary" type="button" data-discard="personalForm">Discard changes</button><button class="btn btn-primary" type="submit">Save details</button></div>
+        <p class="form-success" data-form-success role="status" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span data-success-text>Saved.</span></p>
+      </form>
+    </section>
+
+    <section class="widget" aria-labelledby="md-title">
+      <div class="w-head"><h2 id="md-title">Medical information</h2><span class="field-hint">Visible to your Northcrest doctors</span></div>
+      <form class="form" data-validate novalidate data-no-reset id="medForm" data-success-message="Medical information saved. Your doctor will confirm it at your next visit.">
+        <div class="form-grid">
+          <div class="field"><label for="md-blood">Blood group</label><select id="md-blood" name="blood-group" required><option value="">Choose</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select></div>
+          <div class="field"><label for="md-height">Height (cm)</label><input id="md-height" name="height" type="text" inputmode="numeric" placeholder="163" required><p class="field-error" id="md-height-error"></p></div>
+          <div class="field"><label for="md-weight">Weight (kg)</label><input id="md-weight" name="weight" type="text" inputmode="decimal" placeholder="68" required><p class="field-error" id="md-weight-error"></p></div>
+          <div class="field"><label for="md-bmi">BMI</label><input id="md-bmi" type="text" readonly placeholder="Calculated"></div>
+          <div class="field field--full"><label for="md-allergy">Allergies</label><input id="md-allergy" name="allergies" type="text" placeholder="For example: penicillin, latex, none known"></div>
+          <div class="field field--full"><label for="md-cond">Ongoing conditions</label><input id="md-cond" name="conditions" type="text" placeholder="For example: hypertension, asthma"></div>
+        </div>
+        <div class="form-actions"><button class="btn btn-secondary" type="button" data-discard="medForm">Discard changes</button><button class="btn btn-primary" type="submit">Save medical information</button></div>
+        <p class="form-success" data-form-success role="status" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span data-success-text>Saved.</span></p>
+      </form>
+    </section>
+
+    <section class="widget" aria-labelledby="fm-title">
+      <div class="w-head"><h2 id="fm-title">Family members</h2><button class="btn btn-secondary btn-sm" type="button" id="addFam">Add a member</button></div>
+      <p class="w-sub">Book appointments and see reports for linked family members from your login.</p>
+      <div class="row-list" id="famList"></div>
+    </section>
+
+    <section class="widget" aria-labelledby="em-title">
+      <div class="w-head"><h2 id="em-title">Emergency contact</h2></div>
+      <form class="form" data-validate novalidate data-no-reset id="emForm" data-success-message="Emergency contact saved.">
+        <div class="form-grid">
+          <div class="field"><label for="em-name">Full name</label><input id="em-name" name="contact-name" type="text" placeholder="Arjun Raman" required></div>
+          <div class="field"><label for="em-rel">Relationship</label><select id="em-rel" name="relation" required><option value="">Choose</option><option>Spouse</option><option>Parent</option><option>Son or daughter</option><option>Sibling</option><option>Friend</option></select></div>
+          <div class="field field--full"><label for="em-phone">Phone</label><input id="em-phone" name="phone" type="tel" inputmode="numeric" placeholder="9845098765" required></div>
+        </div>
+        <div class="form-actions"><button class="btn btn-secondary" type="button" data-discard="emForm">Discard changes</button><button class="btn btn-primary" type="submit">Save contact</button></div>
+        <p class="form-success" data-form-success role="status" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg><span data-success-text>Saved.</span></p>
+      </form>
+    </section>
+  </div>
+
+  <div class="profile-side">
+    <section class="widget" aria-labelledby="nt-title">
+      <div class="w-head"><h2 id="nt-title">Notifications</h2></div>
+      <ul class="setting-list">
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="apptSms"> Appointment reminders by SMS</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="apptEmail"> Appointment reminders by email</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="reports"> New reports ready</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="meds"> Medicine reminders</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="bills"> Bills and claim updates</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="whatsapp"> Updates on WhatsApp</label></li>
+        <li><label class="switch"><input type="checkbox" role="switch" data-notify="news"> Health tips and camps</label></li>
+      </ul>
+    </section>
+    <section class="widget" aria-labelledby="sc-title">
+      <div class="w-head"><h2 id="sc-title">Security</h2></div>
+      <ul class="setting-list">
+        <li class="setting-row"><div><strong>Password</strong><span id="pwChanged">Last changed</span></div><button class="btn btn-secondary btn-sm" type="button" data-modal-open="m-pw">Change</button></li>
+        <li class="setting-row"><div><strong>Two-step sign-in</strong><span id="tfaText">Off</span></div><label class="switch"><input type="checkbox" role="switch" id="tfaSwitch" aria-label="Two-step sign-in"></label></li>
+        <li class="setting-row"><div><strong>Signed-in devices</strong><span id="devText">This browser and 1 phone</span></div><button class="btn btn-secondary btn-sm" type="button" id="signoutBtn">Sign out others</button></li>
+        <li class="setting-row"><div><strong>Download my data</strong><span>Profile, visits, reports and bills</span></div><button class="btn btn-secondary btn-sm" type="button" id="dataBtn">Download</button></li>
+      </ul>
+    </section>
+    <section class="widget danger-zone" aria-labelledby="dz-title">
+      <div class="w-head"><h2 id="dz-title">Delete account</h2></div>
+      <p>This removes your portal account. Your medical records stay with the hospital, as the law requires.</p>
+      <button class="btn btn-danger" type="button" data-modal-open="m-delete">Delete my account</button>
+    </section>
+  </div>
+</div>
+
+<div class="modal" id="m-family" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-family-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-family-title">Add a family member</h2>
+    <p>They get their own UHID. You can book and view records for them.</p>
+    <form class="form" data-validate novalidate id="famForm">
+      <div class="field"><label for="fm-name">Full name</label><input id="fm-name" name="full-name" type="text" placeholder="Diya Raman" required></div>
+      <div class="form-grid">
+        <div class="field"><label for="fm-rel">Relationship</label><select id="fm-rel" name="relation" required><option value="">Choose</option><option>Spouse</option><option>Son</option><option>Daughter</option><option>Father</option><option>Mother</option><option>Other</option></select></div>
+        <div class="field"><label for="fm-dob">Date of birth</label><input id="fm-dob" name="dob" type="date" data-rule="required" min="1900-01-01" required></div>
+      </div>
+      <div class="field"><label for="fm-phone">Mobile (optional)</label><input id="fm-phone" name="phone" type="tel" inputmode="numeric" placeholder="9845011122"></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit">Add member</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-unlink" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-unlink-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-unlink-title">Remove family member?</h2>
+    <p id="ulText">Their hospital records are kept. You just will not see them here.</p>
+    <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Keep</button><button class="btn btn-danger" type="button" id="ulConfirm">Remove</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-pw" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-pw-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-pw-title">Change password</h2>
+    <p>At least 8 characters, with a letter and a number.</p>
+    <form class="form" data-validate novalidate id="pwForm">
+      <div class="field"><label for="pw-cur">Current password</label><div class="pw-wrap"><input id="pw-cur" name="current-password" type="password" autocomplete="current-password" placeholder="Your current password" required><button class="pw-toggle" type="button" data-pw-toggle aria-label="Show password">Show</button></div></div>
+      <div class="field"><label for="pw-new">New password</label><div class="pw-wrap"><input id="pw-new" name="new-password" type="password" autocomplete="new-password" placeholder="At least 8 characters" required><button class="pw-toggle" type="button" data-pw-toggle aria-label="Show password">Show</button></div></div>
+      <div class="field"><label for="pw-new2">Confirm new password</label><div class="pw-wrap"><input id="pw-new2" name="confirm-password" type="password" autocomplete="new-password" data-rule="password" data-match="#pw-new" placeholder="Repeat the new password" required><button class="pw-toggle" type="button" data-pw-toggle aria-label="Show password">Show</button></div></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Cancel</button><button class="btn btn-primary" type="submit">Update password</button></div>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="m-delete" hidden>
+  <div class="modal-backdrop" data-modal-close></div>
+  <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="m-delete-title" tabindex="-1">
+    <button class="modal-x" type="button" data-modal-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <h2 id="m-delete-title">Delete your account?</h2>
+    <p>You will be logged out, and your saved cards, family links and reminders will be removed from this portal. Upcoming appointments stay booked unless you cancel them.</p>
+    <form class="form" data-validate novalidate id="delForm">
+      <div class="field"><label for="del-confirm">Type DELETE to confirm</label><input id="del-confirm" name="confirm-text" type="text" autocomplete="off" placeholder="DELETE" required><p class="field-error" id="del-confirm-error"></p></div>
+      <div class="modal-actions"><button class="btn btn-secondary" type="button" data-modal-close>Keep my account</button><button class="btn btn-danger" type="submit">Delete account</button></div>
+    </form>
+  </div>
+</div>
+<script defer src="js/pages/dashboard-data.js"></script>
