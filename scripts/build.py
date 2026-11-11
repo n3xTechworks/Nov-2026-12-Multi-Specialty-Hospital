@@ -252,13 +252,14 @@ def macro_doctor_cards(arg, ctx):
 
 def doc_row(x):
     dept = DEPTS[x["department"]]
-    return ('<li class="doc-row"><a href="doctors.html#{id}"><span class="doc-row-name">{name}</span><span class="doc-row-meta">{title} · {quals}</span></a>'
+    return ('<li class="doc-row"><img class="doc-row-photo" src="images/{id}-160.webp" width="160" height="160" alt="{name}" loading="lazy" decoding="async">'
+            '<a href="doctors.html#{id}"><span class="doc-row-name">{name}</span><span class="doc-row-meta">{title} · {quals}</span></a>'
             '<span class="doc-row-opd">{i}OPD {opd}, {time}</span></li>').format(
         id=x["id"], name=esc(x["name"]), title=esc(x["title"]), quals=esc(", ".join(x["chips"])), i=icon("calendar", 16), opd=esc(", ".join(x["opd"])), time=esc(x["opdTime"]))
 
 
 def macro_doctor_list(arg, ctx):
-    """text list (no photos) of doctors linking to doctors.html#doc-N. {{doctor_list cardiology}} or {{doctor_list doc-1,doc-4}}; inside a department page plain {{doctor_list}}"""
+    """list of doctors with a profile photo, linking to doctors.html#doc-N. {{doctor_list cardiology}} or {{doctor_list doc-1,doc-4}}; inside a department page plain {{doctor_list}}"""
     sel = (arg or "").strip() or (ctx.get("_dept") or {}).get("slug") or "all"
     docs = pick_docs(sel)
     if not docs:

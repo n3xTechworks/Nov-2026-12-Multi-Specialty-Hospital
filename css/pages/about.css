@@ -6,3 +6,6 @@
   background: var(--primary); color: var(--on-primary, #fff); font-family: var(--f-head); font-weight: 800; font-size: 1.125rem; letter-spacing: .02em; }
 .leader-card .card-sub { color: var(--primary-ink); font-weight: 600; }
 .tl-year { display: inline-block; font-family: var(--f-head); font-weight: 800; color: var(--primary-ink); }
+
+/* Leadership: profile photos instead of initials (report fix) */
+.leader-photo { justify-self: start; margin-top: var(--pad); width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center 25%; border: 3px solid var(--primary-soft); }

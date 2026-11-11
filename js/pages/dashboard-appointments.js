@@ -225,7 +225,7 @@
         var doc = D.doctor(a.doctor), stt = a.status === 'confirmed' ? 'completed' : a.status;
         return '<tr><td class="num">' + D.fmt(a.date) + '<span class="cell-sub">' + D.t12(a.time) + '</span></td><td><span class="cell-strong">' + E(doc.name) + '</span><span class="cell-sub">' + E(D.deptName(doc.department)) + '</span></td>' +
           '<td>' + (a.type === 'video' ? 'Video' : 'In person') + '<span class="cell-sub">' + E(a.reason || '') + '</span></td><td>' + D.statusHtml(stt) + '</td>' +
-          '<td><div class="cell-actions">' + (stt === 'completed' ? '<button class="btn btn-secondary btn-sm" type="button" data-notes="' + a.id + '">Summary</button>' : '') +
+          '<td><div class="cell-actions">' + (stt === 'completed' ? '<button class="btn btn-secondary btn-sm" type="button" data-notes="' + a.id + '">Summary</button>' : '<button class="btn btn-secondary btn-sm" type="button" data-notes="' + a.id + '">Details</button>') +
           '<a class="btn btn-secondary btn-sm" href="dashboard-appointments.html?doctor=' + doc.id + '">Book again</a></div></td></tr>';
       }).join('') || '<tr><td colspan="5"><div class="empty empty--slim"><p>No visits match this filter.</p></div></td></tr>';
     }
@@ -238,7 +238,7 @@
     $('pastRows').addEventListener('click', function (e) {
       var b = e.target.closest('[data-notes]'); if (!b) return;
       var a = D.findAppt(b.getAttribute('data-notes')), doc = D.doctor(a.doctor); noteAppt = a;
-      $('m-notes-title').textContent = 'Visit summary, ' + D.fmt(a.date);
+      $('m-notes-title').textContent = (a.status === 'cancelled' ? 'Cancelled visit, ' : 'Visit summary, ') + D.fmt(a.date);
       $('ntMeta').textContent = doc.name + ', ' + doc.title + '.';
       $('ntList').innerHTML = [['Reason', a.reason || '-'], ['Visit', a.type === 'video' ? 'Video consultation' : 'In person'], ['Reference', a.ref], ['Doctor\'s notes', a.notes || 'No notes recorded.']]
         .map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + E(r[1]) + '</dd></div>'; }).join('');

@@ -59,3 +59,7 @@
 .card-fields[hidden], #clBillField[hidden] { display: none; }
 @media (max-width: 559.98px) { .claim-steps span { font-size: .625rem; } .policy-kv { grid-template-columns: minmax(0, 1fr); } }
 .bill-table .cell-actions, .rep-table .cell-actions { flex-wrap: nowrap; }
+
+/* Report fix: card / UPI logo text was greyed by the ".pm-top span" rule; it is white on its badge again and the card name stays on one line */
+.pm-top .pm-logo { color: #fff; font-size: .75rem; }
+.pm-top strong { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

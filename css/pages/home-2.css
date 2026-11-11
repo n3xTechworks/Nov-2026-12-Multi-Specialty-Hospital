@@ -1,5 +1,14 @@
 /* Home 2: planned visits (timings, journey, packages, insurance, emergency info) */
-.hero-home2 { min-height: clamp(500px, 70vh, 640px); padding-block: 72px 88px; }
+/* Home 2 hero: same full-width background photo and shade as before; gold eyebrow and a row of quick visit facts. */
+/* keep both faces in frame: anchor the photo near its top (the shared hero rule sits at 60%, which cut the faces in half) */
+.hero-home2 .hero-bg { object-position: center 12%; }
+@media (max-width: 767.98px) { .hero-home2 .hero-bg { object-position: 80% 12%; } }
+.hero-home2 .eyebrow-pill { background: #F4C95D; border-color: #F4C95D; color: #1B2350; }
+.hero-home2 .eyebrow-pill::before { background: #1B2350; }
+.h2-facts { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
+.h2-facts li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, .14); border: 1px solid rgba(255, 255, 255, .32); color: #fff; font-size: var(--fs-small); font-weight: 600; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.h2-facts svg { width: 18px; height: 18px; color: #F4C95D; flex: none; }
+@media (max-width: 639.98px) { .h2-facts { gap: 8px; } .h2-facts li { font-size: var(--fs-xs); padding: 6px 11px; } }
 
 /* timings at a glance: text + tabbed table, no dock (different from Home 1) */
 .glance { display: grid; grid-template-columns: minmax(0, 1fr); gap: var(--s6); align-items: start;
@@ -51,3 +60,6 @@
 .em-signs li { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: var(--ctl-r);
   border: 1px solid var(--band-line); color: var(--band-ink); font-size: var(--fs-small); }
 .em-signs svg { color: var(--band-accent); flex: none; }
+@media (min-width: 640px) { .h2-facts { display: grid; grid-template-columns: repeat(2, max-content); justify-content: center; } .h2-facts li { justify-content: center; } }
+/* prepare for your visit: checklist cards */
+.prep-list { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); font-size: var(--fs-small); }

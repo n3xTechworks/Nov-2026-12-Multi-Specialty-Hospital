@@ -66,3 +66,17 @@
 .past-table { min-width: 680px; }
 .rs-head { margin-bottom: 0; }
 .modal-body .check { margin-top: 4px; }
+
+/* Report fixes (Appointments)
+   - upcoming cards: action buttons always on one line, in the same order (Add to calendar, [Join video], Reschedule, Cancel);
+     on narrower content they move to their own row under the details instead of wrapping
+   - "Upcoming" count sits inside the button (no overlap)
+   - past visits: every row has two action buttons, so the column has no gaps */
+@media (min-width: 900px) { .up-acts { max-width: none; flex-wrap: nowrap; } }
+@media (min-width: 900px) and (max-width: 1279.98px) { .up-item { grid-template-columns: 60px minmax(0, 1fr); } .up-acts { grid-column: 2 / -1; justify-content: flex-start; } }
+.page-head-actions .btn .badge { position: static; transform: none; align-self: center; margin: 0 0 0 8px; min-width: 22px; height: 22px; padding: 0 7px; border-radius: 999px; font-size: .75rem; line-height: 22px; display: inline-grid; place-items: center; }
+[dir="rtl"] .page-head-actions .btn .badge { margin: 0 8px 0 0; }
+.past-table .cell-actions { display: grid; grid-template-columns: repeat(2, max-content); justify-content: end; gap: 6px; }
+.past-table .cell-actions > * { min-width: 104px; justify-content: center; } /* Summary/Details and Book again are the same size */
+/* phones: upcoming actions as an even 2-column grid (no ragged wrap); an odd last button spans the row */
+@media (max-width: 639.98px) { .up-acts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); } .up-acts > * { width: 100%; justify-content: center; } .up-acts > :last-child:nth-child(odd) { grid-column: 1 / -1; } }

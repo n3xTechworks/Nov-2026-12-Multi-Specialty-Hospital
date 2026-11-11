@@ -40,3 +40,14 @@
   .rx-grid { grid-auto-rows: auto; row-gap: 14px; }
   .rx-card { grid-row: span 4; grid-template-rows: subgrid; row-gap: 14px; }
 }
+
+/* Report fix: today's dose table with more breathing room and evenly arranged columns
+   (medicine | morning | afternoon | night | how to take), plain row header background, no cramped cells */
+.dose-table { table-layout: fixed; }
+.dose-table thead th:first-child { width: 30%; }
+.dose-table .dose-col { width: 14%; }
+.dose-table td, .dose-table th { padding: 14px 18px; vertical-align: middle; }
+.dose-table th[scope="row"] { padding: 14px 18px; background: transparent; }
+.dose-table th[scope="row"] strong, .dose-table th[scope="row"] .cell-strong { display: block; margin-bottom: 2px; }
+.dose-table tbody tr:nth-child(even) { background: color-mix(in srgb, var(--primary-soft) 45%, transparent); }
+.dose-table td:last-child { color: var(--ink); }

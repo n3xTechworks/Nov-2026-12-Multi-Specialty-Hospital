@@ -63,7 +63,7 @@
     });
   });
 
-  /* ---------- Mobile menu (nav links only; controls stay in the header bar) ---------- */
+  /* ---------- Mobile menu (nav links; on phones also theme / RTL / Log in / CTA) ---------- */
   var toggle = document.querySelector('[data-menu-toggle]');
   var panel = document.querySelector('[data-mobile-menu]');
   var header = document.getElementById('siteHeader');
@@ -72,6 +72,19 @@
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     panel.hidden = !open;
+  }
+  /* phones (< 640px): theme, RTL, Log in and Book appointment are moved (not copied) into the hamburger menu */
+  var actions = document.querySelector('#siteHeader .header-actions');
+  if (actions && panel) {
+    var home = actions.parentNode, next = actions.nextElementSibling;
+    var slot = document.createElement('div'); slot.className = 'container mm-actions'; panel.appendChild(slot);
+    var phone = window.matchMedia('(max-width: 639.98px)');
+    var place = function () {
+      if (phone.matches) { if (actions.parentNode !== slot) slot.appendChild(actions); }
+      else if (actions.parentNode !== home) home.insertBefore(actions, next);
+    };
+    place();
+    if (phone.addEventListener) phone.addEventListener('change', place); else phone.addListener(place);
   }
   if (toggle && panel) {
     toggle.addEventListener('click', function () { setMenu(toggle.getAttribute('aria-expanded') !== 'true'); });

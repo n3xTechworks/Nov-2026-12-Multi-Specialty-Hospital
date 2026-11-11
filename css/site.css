@@ -313,14 +313,13 @@ html[dir="rtl"] .d-to-ltr { display: inline; }
   .nav-link { padding-inline: 8px; }
   .header-actions .btn { padding-inline: 12px; }
 }
-/* phones: brand + menu on row 1, theme / RTL / CTA on row 2 (still only one place); Log in lives in the menu */
+/* phones: brand + menu button only; theme / RTL / Log in / Book appointment are moved into the hamburger menu by js/site.js */
 @media (max-width: 639.98px) {
-  .header-inner { flex-wrap: wrap; row-gap: 0; column-gap: 12px; min-height: 0; padding-block: 10px; }
-  .menu-toggle { order: 2; margin-inline-start: auto; }
-  .header-actions { order: 3; flex-basis: 100%; margin: 10px 0 0; padding-top: 10px; border-top: 1px solid var(--line); }
-  .header-actions .btn-login { display: none; }
-  .header-actions [data-nav-cta] { margin-inline-start: auto; }
-  .mm-login { display: block; }
+  .header-inner { column-gap: 12px; min-height: 0; padding-block: 10px; }
+  .menu-toggle { margin-inline-start: auto; }
+  .mm-actions .header-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin: 16px 0 4px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .mm-actions .header-actions .btn-login { margin-inline-start: auto; }
+  .mm-actions .header-actions [data-nav-cta] { flex: 1 1 100%; justify-content: center; }
 }
 
 /* ---------- 5. Sections, bands & intros ---------- */
@@ -1632,3 +1631,38 @@ html[data-theme="dark"] .toast { background: #EAEEFB; color: #111A3E; }
 .em-note{font-size:.8rem;color:var(--band-muted);text-align:center}
 @media (min-width:900px){.emergency-band{grid-template-columns:minmax(0,1fr) auto}}
 [data-theme="dark"] .emergency-band{background:linear-gradient(135deg,#0E1438 0%,#16205E 60%,#1C2A78 100%)}
+
+/* ---------- Report fix: one primary CTA style everywhere ----------
+   The CTA band above the footer used a white primary button. It now uses the same primary button as the rest of the site:
+   light theme = soft blue band with dark text and the navy primary button; dark theme = navy band with the light-blue primary. */
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) { background: radial-gradient(60% 120% at 100% 0%, rgba(47, 111, 237, .14), transparent 70%), linear-gradient(135deg, #EEF2FF, #E3EAFD); color: var(--ink); border: 1px solid #D3DCF7; }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) h2 { color: var(--ink); }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) p:not(.eyebrow) { color: var(--muted); }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .eyebrow { color: var(--primary-ink); }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .eyebrow::before { background: var(--primary-ink); }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .btn-secondary:hover { border-color: var(--primary); color: var(--primary-ink); }
+.cta-band .btn-primary, html[data-theme="dark"] .cta-band .btn-primary { background: var(--primary); border-color: var(--primary); color: var(--on-primary); }
+.cta-band .btn-primary:hover, html[data-theme="dark"] .cta-band .btn-primary:hover { background: var(--primary-hover); border-color: var(--primary-hover); color: var(--on-primary); }
+
+/* Report fix: one logo on every page - a single medical-blue shield icon (white cross), no background tile, the same in
+   light and dark theme and in the header, footer and dashboard sidebar. The name text keeps the colour of its background. */
+.brand-mark .mark-shield, html[data-theme="dark"] .brand-mark .mark-shield,
+.site-footer .brand-mark .mark-shield, html[data-theme="dark"] .site-footer .brand-mark .mark-shield,
+.app-sidebar .brand-mark .mark-shield { fill: #2F6FED; }
+
+/* Report fix: the search panel no longer overlaps the hero; it sits just below it (hero keeps a normal bottom padding) */
+.hero-dock { margin-top: clamp(28px, 4vw, 40px); }
+.hero:has(+ .hero-dock) { padding-block-end: 72px; }
+@media (max-width: 639.98px) { .hero:has(+ .hero-dock) { padding-block-end: 56px; } }
+/* Home 1 and Home 2 heroes: the same size, filling the screen below the sticky header (100vh minus the header) */
+.hero.hero-home1, .hero.hero-home2 { min-height: calc(100vh - var(--header-h)); min-height: calc(100svh - var(--header-h)); padding-block: 72px; }
+@media (max-width: 639.98px) { .hero.hero-home1, .hero.hero-home2 { padding-block: 56px 48px; } }
+/* One secondary CTA style everywhere (report 102: consistent CTAs): hero, bands and the band above the footer use the
+   standard .btn-secondary, in light and dark theme. Primary CTAs already share one style site-wide. */
+.hero .btn-secondary, .page-hero .btn-secondary, .band .btn-secondary, .cta-band .btn-secondary,
+html[data-theme="dark"] .cta-band .btn-secondary, .cta-band.cta-band--soft .btn-secondary,
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .btn-secondary { background: var(--surface); color: var(--ink); border-color: var(--line-strong); }
+.hero .btn-secondary:hover, .page-hero .btn-secondary:hover, .band .btn-secondary:hover, .cta-band .btn-secondary:hover,
+html[data-theme="dark"] .cta-band .btn-secondary:hover, .cta-band.cta-band--soft .btn-secondary:hover,
+html:not([data-theme="dark"]) .cta-band:not(.cta-band--soft) .btn-secondary:hover { background: var(--surface); border-color: var(--primary-ink); color: var(--primary-ink); }

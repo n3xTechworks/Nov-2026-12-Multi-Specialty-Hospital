@@ -21,3 +21,6 @@
 .danger-zone p { color: var(--muted); font-size: var(--fs-small); margin-bottom: var(--s4); }
 #md-bmi { background: var(--primary-soft); }
 .badge--warn { background: var(--warn-bg); color: var(--warn); }
+
+/* Family members: "Book for ..." buttons are the same width in every row (names differ in length) */
+#famList .row-end .btn[href] { min-width: 148px; justify-content: center; }

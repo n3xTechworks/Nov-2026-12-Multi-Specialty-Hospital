@@ -32,7 +32,7 @@ const NAV = ['Home', 'About', 'Departments', 'Doctors', 'Blog', 'Contact', 'Dash
 const WIDTHS = QUICK ? [360, 768, 1024, 1440] : [360, 390, 768, 900, 1024, 1180, 1280, 1440];
 // every photo lives on ONE page. Exceptions: user-1 (dashboard avatar, all app pages); blog-N + author-N may appear on blog.html AND blog-post-N.html only
 const IMG_EXEMPT = [/^user-1$/];
-const IMG_PAIR = k => { const m = k.match(/^(blog|author)-(\d)$/); return m ? ['blog.html', `blog-post-${m[2]}.html`] : null; };
+const IMG_PAIR = k => { const m = k.match(/^(blog|author)-(\d)$/); if (m) return ['blog.html', `blog-post-${m[2]}.html`]; /* doctor photos: doctors.html, their department page and About (leadership) */ if (/^doc-\d+$/.test(k)) return ['doctors.html', 'about.html', ...SERVICE_PAGES]; return null; };
 const fails = [];
 const warn = [];
 const fail = (page, msg) => fails.push(`${page}: ${msg}`);
@@ -118,7 +118,7 @@ const kind = p => AUTH.includes(p) ? 'auth' : APP.includes(p) ? 'app' : 'public'
     if (HERO_PAGES.includes(page) && !(s.heroInfo && /page-hero/.test(s.heroInfo.cls))) fail(page, 'inner page needs the standard .page-hero');
     if (page === 'index.html' && !(s.heroInfo && /\bhero\b/.test(s.heroInfo.cls) && !/page-hero/.test(s.heroInfo.cls))) fail(page, 'Home 1 needs the .hero home variant');
     if (page === 'index.html') { if (s.depts < 8) fail(page, 'Home 1 needs 8 major department tiles'); if (s.facilities < 6) fail(page, 'Home 1 needs the 6 facility photos'); if (s.testimonials.length < 3) fail(page, 'Home 1 needs 3 testimonials'); if (!s.searchPanel) fail(page, 'Home 1 hero needs the doctor/department search panel (form.search-panel[data-search-form])'); if (s.quick !== 4) fail(page, 'Home 1 needs 4 quick-action tiles'); }
-    if (K === 'public' && !s.strip) fail(page, 'missing emergency utility strip');
+    /* emergency utility strip removed at the client's request (report 101, item 1) */
     if (page === 'home-2.html' && s.testimonials.length < 3) fail(page, 'Home 2 needs 3 testimonials (testi-4..6)');
     if (page === 'departments.html') { if (s.depts !== 12) fail(page, `expected 12 department tiles, found ${s.depts}`); if (s.deptPhotos < 12) fail(page, 'every department tile needs its dept-* photo'); if (s.teamChips < 5) fail(page, 'departments need All + 4 category filter chips'); }
     if (page === 'doctors.html') { if (s.team !== 12) fail(page, `expected 12 doctor cards, found ${s.team}`); if (s.teamChips < 4) fail(page, 'doctors page needs department filter chips ([data-filter-group])'); }
@@ -171,10 +171,10 @@ const kind = p => AUTH.includes(p) ? 'auth' : APP.includes(p) ? 'app' : 'public'
         const out = {};
         out.hscroll = document.documentElement.scrollWidth - window.innerWidth;
         const sels = kind === 'public' ? ['[data-theme-toggle]', '[data-dir-toggle]', '[data-nav-cta]'] : kind === 'app' ? ['[data-theme-toggle]', '[data-dir-toggle]'] : [];
-        out.controls = sels.map(sel => [...document.querySelectorAll(sel)].filter(vis).length);
+        out.controls = sels.map(sel => [...document.querySelectorAll(sel)].filter(e => vis(e) || e.closest('[data-mobile-menu]')).length); /* phones: controls live in the hamburger menu */
         const ctl = ['[data-theme-toggle]', '[data-dir-toggle]', '[data-nav-cta]', '[data-nav-login]'].map(sel => [...document.querySelectorAll(sel)].find(e => vis(e) && e.closest('#siteHeader') && !e.closest('[data-mobile-menu]')));
         out.ctlDims = ctl.filter(Boolean).map(e => { const rc = e.getBoundingClientRect(); return [Math.round(rc.height), getComputedStyle(e).borderTopLeftRadius]; });
-        out.login = kind === 'public' ? (() => { const a = [...document.querySelectorAll('[data-nav-login]')].filter(vis).length; const inMenu = window.innerWidth < 640 && !!document.querySelector('[data-mobile-menu] a[href="login.html"]'); return a + (inMenu ? 1 : 0); })() : 1;
+        out.login = kind === 'public' ? (() => { const a = [...document.querySelectorAll('[data-nav-login]')].filter(vis).length; const inMenu = !!document.querySelector('[data-mobile-menu] [data-nav-login]'); return a + (inMenu ? 1 : 0); })() : 1;
         const hero = document.querySelector('.page-hero');
         out.heroH = hero ? Math.round(hero.getBoundingClientRect().height) : null;
         // header fits on one row at desktop (no wrapped nav)

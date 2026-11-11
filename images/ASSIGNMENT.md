@@ -51,3 +51,5 @@ doc-1 M Arvind Rao, doc-2 F Meera Krishnan, doc-3 M Karthik Iyer, doc-4 F Ananya
 doc-7 M Farhan Sheikh, doc-8 F Amara Nwosu, doc-9 M Martin Ellis, doc-10 F Neha Kapoor, doc-11 M Imran Qureshi, doc-12 F Rosemary Thomas.
 testi-1 older woman (Saraswati Gowda), testi-2 young man (Rohan Mehta), testi-3 woman ~30 (Divya Prakash) on Home 1;
 testi-4 man ~50, testi-5 elderly woman, testi-6 older man with white beard on Home 2. user-1 = Priya Raman (patient, woman ~35).
+
+Leadership portraits (About, added after client review): leader-1 Dr Sudha Ramesh, leader-3 Vivek Mahadevan, leader-4 Grace Thomas (free-licence Unsplash portraits: photo-1547212371-eb5e6a4b590c, photo-1771244688590-1e481dba1b5a, photo-1679138118375-47f78db3761d). Dr Arvind Rao uses his doctor photo doc-1. Doctor photos doc-N also appear on their department page.
